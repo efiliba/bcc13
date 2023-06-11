@@ -1,0 +1,26 @@
+[
+  {
+    "image": {
+      "source": "slider_image_1.jpg",
+      "alternate": "First slide"
+    }
+  },
+  {
+    "image": {
+      "source": "slider_image_3.jpg",
+      "alternate": "Third slide"
+    }
+  },
+  {
+    "image": {
+      "source": "slider_image_4.jpg",
+      "alternate": "Fourth slide"
+    }
+  },
+  {
+    "image": {
+      "source": "slider_image_5.jpg",
+      "alternate": "Fith slide"
+    }
+  }
+]

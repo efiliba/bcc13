@@ -1,0 +1,46 @@
+.the-best {
+  padding-top: 9rem;
+  padding-bottom: 8rem;
+  background-color: $white;
+
+  @include breakpoint(sm) {
+    padding-top: 12rem;
+    padding-bottom: 12rem;
+  }
+
+  &__container {
+    @include content-layout();
+
+    .split-image-content {
+      gap: 3.5rem 9.5rem ;
+
+      .the-best__title {
+        padding-right: 3rem;
+      }
+
+      .action-title {
+        margin: 2.5rem 0 1.5rem;
+        text-align: center;
+
+        @include breakpoint(sm) {
+          margin: 3rem 0;
+          text-align: left;
+        }
+      }
+
+      .phone-icon-column-link {
+        text-align: center;
+
+        @include breakpoint(sm) {
+          text-align: left;
+        }
+
+        a {
+          @include responsive-button-size();
+
+          color: $white;
+        }
+      }
+    }
+  }
+}

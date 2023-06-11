@@ -1,0 +1,89 @@
+{
+  "headingGroups": [
+    {
+      "text": "Home Care Package Level",
+      "align": "center"
+    },
+    {
+      "text": "Hours of Care Per Week",
+      "span": 2,
+      "align": "center"
+    }
+  ],
+  "headings": [
+    {
+      "text": "",
+      "align": "center"
+    },
+    {
+      "text": "No Basic Daily Care Fee**",
+      "align": "center"
+    },
+    {
+      "text": "With Cognitive Supplement***",
+      "align": "center"
+    }
+  ],
+  "rows": [
+    [
+      {
+        "text": "Level 1",
+        "align": "center"
+      },
+      {
+        "text": 2,
+        "align": "center"
+      },
+      {
+        "text": 2,
+        "align": "center"
+      }
+    ],
+    [
+      {
+        "text": "Level 2",
+        "align": "center"
+      },
+      {
+        "text": 4,
+        "align": "center"
+      },
+      {
+        "text": 4,
+        "align": "center"
+      }
+    ],
+    [
+      {
+        "text": "Level 3",
+        "align": "center"
+      },
+      {
+        "text": 8,
+        "align": "center"
+      },
+      {
+        "text": 9,
+        "align": "center"
+      }
+    ],
+    [
+      {
+        "text": "Level 4",
+        "align": "center"
+      },
+      {
+        "text": 12.5,
+        "align": "center"
+      },
+      {
+        "text": 14,
+        "align": "center"
+      }
+    ]
+  ],
+  "captions": [
+    { "text": "**These estimated hours are based on government funding you might be asked contribute basic daily fee" },
+    { "text": "***Income test" }
+  ]
+}

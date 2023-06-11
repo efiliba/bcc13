@@ -1,0 +1,50 @@
+@import "../../app/variables";
+
+.tiles {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(32rem, 1fr));
+  justify-content: space-between;
+  gap: 2.4rem 3rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+
+  .tile {
+    background-color: $white;
+    padding: 3rem 4rem;
+    text-align: left;
+    text-decoration: none;
+    transition: 300ms linear;
+    border-radius: 0.5rem;
+    display: grid;
+    grid-template-columns: min-content 1fr;
+    align-items: center;
+    gap: 1.5rem 1rem;
+    
+    @include breakpoint(sm) {
+      padding: 4.5rem 5rem 5rem;
+      gap: 3rem 1.5rem;
+    }
+
+    &:hover {
+      box-shadow: 20px 20px 65px rgba(0, 0, 0, 0.12);
+
+      .title {
+        color: $secondary;
+      }
+    }
+
+    img {
+      width: 3rem;
+
+      @include breakpoint(sm) {
+        width: unset;
+      }
+    }
+
+    & > p {
+      margin: 0;
+      grid-column: span 2;
+      align-self: start;
+    }
+  }
+}

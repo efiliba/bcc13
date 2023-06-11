@@ -1,0 +1,33 @@
+@import "../../app/variables";
+
+.book {
+  padding-top: 8rem;
+  padding-bottom: 8rem;
+  background-color: $white;
+
+  @include breakpoint(sm) {
+    padding-top: 12rem;
+    padding-bottom: 12rem;
+  }
+
+  &__container {
+    @include content-layout();
+    gap: 3rem;
+
+    .book-page__image {
+      grid-area: image;
+      width: 100%;
+      box-sizing: border-box;
+      border: solid 10px #d6d6d6;
+      box-shadow: 10px 10px 20px 0px rgb(0 0 0 / 12%);
+  
+      @include breakpoint(sm) {
+        height: 100%;
+      }
+    }
+
+    .book-page__content {
+      padding: 1rem;
+    }
+  }
+}

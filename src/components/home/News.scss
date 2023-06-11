@@ -1,0 +1,84 @@
+.home-news {
+  background-color: $white;
+  padding: 2rem 0;
+  
+  h2 {
+    @include content-layout();
+
+    color: $secondary;
+    text-transform: uppercase;
+    font-weight: bold;
+
+    &:after {
+      content: " ";
+      width: 5rem;
+      border-bottom: 3px solid;
+      display: block;
+      margin: 2rem auto 0;
+    }
+  }
+
+  // @include breakpoint(md) {
+  //   padding-left: 10rem;
+  //   padding-right: 10rem;
+  // }
+
+  // @include breakpoint(lg) {
+  //   padding-left: 15rem;
+  //   padding-right: 15rem;
+  // }
+
+  &__container {
+    @include content-layout();
+
+    @include breakpoint(sm) {
+      grid-template-columns: auto auto;
+    }
+
+    .tile {
+      min-width: 80%;
+      text-align: left;
+      position: relative;
+      border: solid 1px $line-color;
+
+      &:hover .article-image {
+        opacity: .7;
+      }
+
+      &__article-image {
+        width: 100%;
+      }
+
+      &__article-heading {
+        display: block;
+        padding: 1rem 2.5rem;
+        
+        &:hover {
+          color: black;
+        }
+      }
+      
+      &__article-description {
+        padding: 0 2.5rem 2.5rem;
+
+        &:hover {
+          color: black;
+        }
+      }
+      
+      &__article-button {
+        position: absolute;
+        bottom: 2rem;
+        left: 2rem;
+      }
+
+      @include breakpoint(xs) {
+        min-width: 40%;
+      }
+
+      @include breakpoint(lg) {
+        min-width: 30%;
+      }
+    }
+  }
+}

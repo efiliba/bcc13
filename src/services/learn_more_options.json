@@ -1,0 +1,27 @@
+[
+  {
+    "image": "help-carers.jpg",
+    "title": "What is home care?",
+    "description": [
+      "We provide support workers, nurses and allied health care services to support you in your home.",
+      "A care worker can assist you for as little as 1 hour or up to 24 hours, 7 days a week or even overnight depending on you or your loved one’s individual needs."
+    ],
+    "link": "/in-home-aged-care"
+  },
+  {
+    "image": "cleanliness.jpg",
+    "title": "Help at Home",
+    "description": [
+      "We provide an extra pair of hands to continue your regular household tasks to keep your house running smoothly"
+    ],
+    "link": "/domestic-assistance"
+  },
+  {
+    "image": "mother-and-daughter.jpg",
+    "title": "Companionship",
+    "description": [
+      "This can be someone to have a cup of coffee with, go shopping or have someone take you to appointments or just a stroll in the park."
+    ],
+    "link": "/in-home-aged-care"
+  }
+]

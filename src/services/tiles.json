@@ -1,0 +1,44 @@
+[
+  {
+    "header": {
+      "icon": "heart-in-hands",
+      "text": "Personal Care"
+    },
+    "description": "Assistance with daily activities such as showering, dressing and other daily needs."
+  },
+  {
+    "header": {
+      "icon": "group",
+      "text": "Community Participation"
+    },
+    "description": "Support to enable you to participate in social and recreational activities in the community."
+  },
+  {
+    "header": {
+      "icon": "bar-graph",
+      "text": "Achieve Your Goals"
+    },
+    "description": "Supporting you to reach your goals and live life on your terms."
+  },
+  {
+    "header": {
+      "icon": "helping-elderly",
+      "text": "Domestic Assistance"
+    },
+    "description": "We can support you with household cleaning, meal preparation and other domestic tasks."
+  },
+  {
+    "header": {
+      "icon": "lion-heart",
+      "text": "Dementia Support"
+    },
+    "description": "Supporting clients with dementia to live safely in their home."
+  },
+  {
+    "header": {
+      "icon": "doctor-in-screen",
+      "text": "Medication Assistance"
+    },
+    "description": "Assistance with medication administration and reminders."
+  }
+]

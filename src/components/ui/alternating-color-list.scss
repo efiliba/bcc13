@@ -1,0 +1,17 @@
+@import "../../app/variables";
+
+.alternating-color-list {
+  &__row {
+    padding: 1.5rem 4rem;
+
+    &:nth-child(2n + 1) {
+      color: $primary;
+      background-color: rgba(0, 177, 197, .1);
+    }
+    
+    &:nth-child(2n) {
+      color: $secondary;
+      background-color: rgba(113, 89, 166, .1);
+    }
+  }
+}

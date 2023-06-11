@@ -1,0 +1,27 @@
+@import "../../app/variables";
+
+.image-text-overlay {
+  position: relative;
+
+  &__image {
+    width: 100%;
+  }
+
+  &__content {
+    .image-text-overlay__card {
+      padding: 8.9rem 1.7rem 5.4rem 2.3rem;
+      width: 90%;
+      margin: auto;
+      transform: translateY(-15%);
+
+      @include breakpoint(sm) {
+        position: absolute;
+        padding: 7rem 6rem 6rem;
+        width: 61%;
+        right: 7.4rem;
+        bottom: 0;
+        transform: translateY(0);
+      }
+    }
+  }
+}

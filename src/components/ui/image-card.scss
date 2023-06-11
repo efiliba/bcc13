@@ -1,0 +1,40 @@
+@import "../../app/variables";
+
+.image-card {
+  display: grid;
+  grid-template-rows: min-content 1fr min-content;
+  row-gap: 2rem;
+
+  @include breakpoint(md) {
+    row-gap: 4rem;
+  }
+
+  &__content {
+    padding: 0 4rem !important;
+
+    h2 {
+      line-height: 3.5rem;
+      font-weight: normal;
+      margin-bottom: 1rem;
+
+      @include breakpoint(md) {
+        margin-bottom: 2rem;
+      }
+    }
+  }
+
+  &__footer {
+    margin: 0 4rem 2rem;
+    padding: 0 !important;
+
+    @include breakpoint(md) {
+      margin-bottom: 5rem;
+    }
+
+    a {
+      @include responsive-button-size();
+
+      color: $secondary;
+    }
+  }
+}

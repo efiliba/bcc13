@@ -1,0 +1,43 @@
+@import "../../app/variables";
+
+.services-nav-bar {
+  ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    text-align: center;
+    color: $white;
+    
+    @include breakpoint(sm) {
+      @include content-layout();
+      grid-template-columns: repeat(3, 1fr);
+      justify-content: stretch;
+      gap: 0;
+    }
+
+    li {
+      padding: 3rem;
+
+      .link:hover {
+        color: $primary;
+        cursor: pointer;
+      }
+    }
+
+    li:nth-child(1) {
+      background-color: $secondary;
+    }
+
+    li:nth-child(2) {
+      background-color: $primary;
+
+      .link:hover {
+        color: $secondary;
+      }
+    }
+
+    li:nth-child(3) {
+      background-color: $alternate;
+    }
+  }
+}

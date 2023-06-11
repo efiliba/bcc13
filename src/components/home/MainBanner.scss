@@ -1,0 +1,66 @@
+.main-banner {
+  position: relative;
+  background-color: slategrey;
+
+  &__image {
+    width: 100%;
+    min-height: 70rem;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  &__content {
+    position: absolute;
+    width: 100%;
+    top: 50%;
+    transform: translateY(-50%);
+    color: white;
+    
+    &__container {
+      // @include content-layout();
+      max-width: map-get($breakpoints, 'lg');
+      margin: auto;
+      padding: 0 1rem;
+      text-align: center;
+
+      @include breakpoint(sm) {
+        text-align: left;
+      }
+
+      .title {
+        font-size: 3.5rem;
+        line-height: 4.2rem;
+        font-weight: normal;
+        padding: 0 2rem;
+
+        @include breakpoint(sm) {
+          font-size: 6.5rem;
+          line-height: 7.8rem;
+          padding: 0;
+          max-width: 84.4rem;
+        }
+      }
+
+      .description {
+        font-size: 1.6rem;
+        line-height: 2.4rem;
+        font-weight: normal;
+        margin-bottom: 6rem;
+        padding: 0 1rem;
+
+        @include breakpoint(sm) {
+          font-size: 2.2rem;
+          line-height: 2.5rem;
+          padding: 0;
+          max-width: 57.2rem;
+        }
+      }
+
+      a {
+        @include responsive-button-size();
+
+        color: $white;
+      }
+    }
+  }
+}

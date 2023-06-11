@@ -1,0 +1,27 @@
+[
+  {
+    "stage": 1,
+    "icon": "phone",
+    "heading": "Contact us for a free consultation"
+  },
+  {
+    "stage": 2,
+    "icon": "person",
+    "heading": "Our Case Manager will visit to discuss your in-home care needs or care options."
+  },
+  {
+    "stage": 3,
+    "icon": "person-deciding",
+    "heading": "Decide if you would like Best Choice Care to be your provider"
+  },
+  {
+    "stage": 4,
+    "icon": "find-person",
+    "heading": "We find the best support workers and nurses to match your needs"
+  },
+  {
+    "stage": 5,
+    "icon": "tick-in-circles",
+    "heading": "Start your services"
+  }
+]

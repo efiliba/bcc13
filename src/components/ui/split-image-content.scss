@@ -1,0 +1,43 @@
+@import "../../app/variables";
+
+.split-image-content {
+  display: grid;
+  grid-template-areas:
+    "image"
+    "text";
+
+  align-items: center;
+  row-gap: 3.5rem;
+  text-align: center;
+  background-color: transparent;
+  text-align: left;
+
+  @include breakpoint(sm) {
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: "text image";
+    column-gap: 3rem;
+
+    & .image-first {
+      grid-template-areas: "image text";
+    }
+  }
+
+  &__image {
+    width: 100%;
+  }
+
+  &__content {
+    grid-area: text;
+    background-color: transparent;
+
+    .paragraph {
+      margin-top: 1rem;
+    }
+  }
+}
+
+.image-first {
+  @include breakpoint(sm) {
+    grid-template-areas: "image text";
+  }
+}

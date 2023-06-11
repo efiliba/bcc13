@@ -1,0 +1,37 @@
+{
+  "headings": [
+    {
+      "text": "Self-Funded / Private Care",
+      "width": "50%"
+    },
+    {
+      "text": "Government Funded"
+    }
+  ],
+  "rows": [
+    [
+      { "text": "No Aged care assessments" },
+      { "text": "An assessment by ACAT" }
+    ],
+    [
+      { "text": "No waiting lists" },
+      { "text": "Accessing government funded support" }
+    ],
+    [
+      { "text": "No set up fees" },
+      { "text": "" }
+    ],
+    [
+      { "text": "No Exit fees" },
+      { "text": "No Exit fees" }
+    ],
+    [
+      { "text": "Fees an hourly rate" },
+      { "text": "2 different fees you mght be asked to pay depending on your financial situation. Receive government subsideded budget to buy care or services" }
+    ],
+    [
+      { "text": "" },
+      { "text": "20% competetive home care package management fee" }
+    ]
+  ]
+}

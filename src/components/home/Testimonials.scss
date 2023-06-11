@@ -1,0 +1,78 @@
+.testimonials {
+  padding-top: 7rem;
+  padding-bottom: 8rem;
+  background-color: #f9f9f9;
+  
+  @include breakpoint(sm) {
+    padding-top: 12rem;
+    padding-bottom: 12rem;
+  }
+
+  &__container {
+    @include content-layout();
+
+    .testimonials__title {
+      &.mobile {
+        font-weight: normal;
+        text-align: center;
+
+        @include breakpoint(md) {
+          display: none;
+        }
+      }
+
+      &.tablet {
+        display: none;
+
+        @include breakpoint(md) {
+          display: block;
+        }
+        
+        @include breakpoint(lg) {
+          margin: 6.7rem 0 0 1.3rem;
+        }
+      }
+    }
+
+    .testimonials__content {
+      position: relative;
+
+      .testimonials__card {
+        padding: 5rem 7rem 5rem 5rem;
+        
+        @include breakpoint(sm) {
+          padding: 4rem;
+          position: absolute;
+          top: 50%;
+          transform: translateY(-50%);
+          left: -20%;
+          right: 0;
+        }
+
+        @include breakpoint(md) {
+          padding: 8rem 7rem;
+          top: calc(50% + 4.5rem);
+        }
+
+        p:not(:last-of-type) {
+          font-size: 1.8rem;
+          line-height: 3rem;
+          font-style: italic;
+          
+          @include breakpoint(md) {
+            font-size: 2.2rem;
+            line-height: 3.7rem;
+          }
+        }
+
+        h4 {
+          margin-bottom: .7rem;
+        }
+
+        button {
+          float: right;
+        }
+      }
+    }
+  }
+}

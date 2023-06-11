@@ -1,0 +1,39 @@
+.nursing {
+  padding-top: 9rem;
+  padding-bottom: 8rem;
+  background-color: $panel-background-color;
+
+  @include breakpoint(sm) {
+    padding-top: 12rem;
+    padding-bottom: 12rem;
+  }
+
+  &__container {
+    @include content-layout();
+
+    .split-content {
+      gap: 3.5rem 9.5rem;
+
+      .lhs {
+        &__nursing__pre-title {
+          color: $secondary;
+          font-size: 2rem;
+          line-height: 3rem;
+
+          @include breakpoint(sm) {
+            font-size: 2.5rem;
+            line-height: 3.5rem;
+          }
+        }
+
+        &__nursing__title {
+          padding-right: 3rem;
+        }
+      }
+
+      .rhs__nursing__title {
+        margin-bottom: 3rem;
+      }
+    }
+  }
+}

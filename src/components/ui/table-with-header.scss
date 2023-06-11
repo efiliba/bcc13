@@ -1,0 +1,15 @@
+@import "../../app/variables";
+
+.table-with-header {
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+  background-color: $white;
+
+  &__container {
+    @include content-layout();
+
+    &-header {
+      text-align: center;
+    }
+  }
+}

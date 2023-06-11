@@ -1,0 +1,62 @@
+@import "../../app/variables";
+
+.acknowledgement-of-country {
+  width: 100%;
+  background-color: #f6f6f6;
+  padding: 3rem 0;
+
+  &__content {
+    @include content-layout();
+
+    display: grid;
+    grid-template-columns: repeat(3, min-content) 1fr;
+    gap: 10px;
+
+    img {
+      align-self: end;
+      width: 52px;
+      height: 32px;
+      object-fit: cover;
+
+      &:first-of-type {
+        justify-self: flex-end;
+      }
+
+      &:nth-of-type(2) {
+        justify-self: flex-start;
+      }
+
+      @include breakpoint(sm) {
+        &:first-of-type {
+          grid-column: 2;
+        }
+      }
+    }
+
+    .acknowledgement-label {
+      grid-column: span 4;
+      text-align: left;
+      font-weight: bold;
+
+      @include breakpoint(sm) {
+        grid-column: span 3;
+        text-align: center;
+        grid-column: 2 / 4;
+      }
+    }
+
+    .acknowledgement-content {
+      grid-column: span 4;
+
+      @include breakpoint(sm) {
+        grid-column-start: 4;
+        grid-row: 1 / span 2;
+        display: grid;
+        align-items: center;
+        margin-left: 40px;
+        padding-left: 38px;
+        border-left: solid 1px black;
+      }
+    }
+  }
+}
