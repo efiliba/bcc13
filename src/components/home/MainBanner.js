@@ -9,9 +9,8 @@ export const MainBanner = ({ image, title, description, action }) =>
     <div className="absolute text-white text-center md:text-left px-3 w-full max-w-screen-xl mx-auto">
       <h1 className="text-6xl">{title}</h1>
       <h2 className="mt-4 text-xl max-w-[550px]">{description}</h2>
-      <Link className="" href="/in-home-aged-care" passHref>
-        <input className="mt-4" type="button" value={action} />
-        <Button />
+      <Link href="/in-home-aged-care" passHref>
+        <Button className="mt-4 uppercase">{action}</Button>
       </Link>
     </div>
   </div>;

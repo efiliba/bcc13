@@ -13,7 +13,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="en">
       <body>
-        {/* <Header /> */}
+        <Header />
         {children}
         <Container className="bg-gray-100">
           <AcknowledgementOfCountry />
