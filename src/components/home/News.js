@@ -1,4 +1,4 @@
-import { Typography, Button } from '@mui/material';
+// import { Typography, Button } from '@mui/material';
 
 const Tile = ({article}) =>
   <div className="tile">
@@ -8,11 +8,11 @@ const Tile = ({article}) =>
       alt={article.image.text}
     />
     {/* <a className="tile__article-heading" href={article.link}> */}
-      <Typography className="tile__article-heading" variant="h6">{article.heading}</Typography>
+      {/* <Typography className="tile__article-heading" variant="h6">{article.heading}</Typography> */}
     {/* </a> */}
-    <Typography className="tile__article-description" variant="body2">
+    {/* <Typography className="tile__article-description" variant="body2">
       {article.description}
-    </Typography>
+    </Typography> */}
     {/* <Button className="tile__article-button" variant="outlined" color="primary">
       Read More
     </Button> */}

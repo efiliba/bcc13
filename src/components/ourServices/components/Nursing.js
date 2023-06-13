@@ -1,13 +1,13 @@
-import { Typography } from '@mui/material';
+// import { Typography } from '@mui/material';
 
-import { SplitContent, AlternatingColorList } from '@/components';
+// import { SplitContent, AlternatingColorList } from '@/components';
 
-import { nursingServices } from '@/services';
+// import { nursingServices } from '@/services';
 
 export const Nursing = () =>
   <div className="nursing">
     <div className="nursing__container">
-      <SplitContent>
+      {/* <SplitContent>
         {{
           lhs:
             <div className="lhs">
@@ -27,6 +27,6 @@ export const Nursing = () =>
               <AlternatingColorList list={nursingServices} />
             </div>
         }}
-      </SplitContent>
+      </SplitContent> */}
     </div>
   </div>;

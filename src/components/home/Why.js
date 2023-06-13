@@ -1,10 +1,10 @@
-import { Typography } from '@mui/material';
+// import { Typography } from '@mui/material';
 
-import { Tiles } from '@/components';
+// import { Tiles } from '@/components';
 
 export const Why = ({ tiles }) =>
   <div className="why">
-    <div className="why__container">
+    {/* <div className="why__container">
       <Typography variant="h1">Why Choose In-Home Care?</Typography>
       <Typography variant="h4">
         In-Home Care Offers A Dignifying, Reliable, And Comfortable Care Experience
@@ -17,5 +17,5 @@ export const Why = ({ tiles }) =>
         your own&nbsp;terms.
       </Typography>
       <Tiles tiles={tiles} />
-    </div>
+    </div> */}
   </div>;

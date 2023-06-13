@@ -1,11 +1,11 @@
-import { Typography } from '@mui/material';
+// import { Typography } from '@mui/material';
 
-import { ImageTextOverlay } from '@/components';
+// import { ImageTextOverlay } from '@/components';
 
 export const HelpAtHome = () =>
   <div className="help-at-home">
     <div className="help-at-home__container">
-      <ImageTextOverlay image="help-at-home.png">
+      {/* <ImageTextOverlay image="help-at-home.png">
         <>
           <Typography className="help-at-home__pre-title">Help At Home</Typography>
           <Typography className="help-at-home__title" variant="h1">We Help Around The House</Typography>
@@ -17,6 +17,6 @@ export const HelpAtHome = () =>
             in order until you get back onto your feet.
           </Typography>
         </>
-      </ImageTextOverlay>
+      </ImageTextOverlay> */}
     </div>
   </div>;

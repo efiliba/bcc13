@@ -1,10 +1,10 @@
-import { Typography, Button } from '@mui/material';
+// import { Typography, Button } from '@mui/material';
 
-import { SplitImageContent } from '@/components';
+// import { SplitImageContent } from '@/components';
 
 export const LiveAtHome = () =>
   <div className="live-at-home">
-    <div className="live-at-home__container">
+    {/* <div className="live-at-home__container">
       <SplitImageContent image="elderly-care.png">
         <Typography className="live-at-home__title" variant="h1">Live in your own home, on your own terms</Typography>
         <Typography variant="body2">
@@ -15,6 +15,6 @@ export const LiveAtHome = () =>
         </Typography>
         <Button className="button" variant="contained">Book Now</Button>
       </SplitImageContent>
-    </div>
+    </div> */}
     <img className="live-at-home__decorative-image" src="/images/dots.png" alt="decorative-image" />
   </div>;

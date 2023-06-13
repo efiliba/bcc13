@@ -1,11 +1,11 @@
-import { Typography } from '@mui/material';
+// import { Typography } from '@mui/material';
 
-import { SplitImageContent } from '@/components';
+// import { SplitImageContent } from '@/components';
 
 export const Range = () =>
   <div className="range">
     <div className="range__container">
-      <SplitImageContent image="our-services.png" imageFirst>
+      {/* <SplitImageContent image="our-services.png" imageFirst>
         <Typography className="range__pre-title">Our Services</Typography>
         <Typography className="range__title" variant="h1">Our Comprehensive Range Of Services Cater To Every Need</Typography>
         <Typography variant="body2">
@@ -14,6 +14,6 @@ export const Range = () =>
         <Typography variant="body2">
           Whether you’re switching from a support worker to a nurse, you’ll find each member of our team working in accordance with our values and establishing a genuine and compassionate relationship with their client. 
         </Typography>
-      </SplitImageContent>
+      </SplitImageContent> */}
     </div>
   </div>;

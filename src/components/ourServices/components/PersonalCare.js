@@ -1,13 +1,13 @@
-import { Typography } from '@mui/material';
+// import { Typography } from '@mui/material';
 
-import { SplitContent, BulletList } from '@/components';
+// import { SplitContent, BulletList } from '@/components';
 
-import { personalCare } from '@/services';
+// import { personalCare } from '@/services';
 
 export const PersonalCare = () =>
   <div className="personal-care">
     <div className="personal-care__container">
-      <SplitContent>
+      {/* <SplitContent>
         {{
           lhs:
             <div className="lhs">
@@ -29,6 +29,6 @@ export const PersonalCare = () =>
               </Typography>
             </div>
         }}
-      </SplitContent>
+      </SplitContent> */}
     </div>
   </div>;

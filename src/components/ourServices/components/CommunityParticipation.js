@@ -1,13 +1,13 @@
-import { Typography } from '@mui/material';
+// import { Typography } from '@mui/material';
 
-import { SplitContent, BulletList } from '@/components';
+// import { SplitContent, BulletList } from '@/components';
 
 import { communityParticipation } from '@/services';
 
 export const CommunityParticipation = () =>
   <div className="community-participation">
     <div className="community-participation__container">
-      <SplitContent>
+      {/* <SplitContent>
         {{
           lhs:
             <div className="lhs">
@@ -33,6 +33,6 @@ export const CommunityParticipation = () =>
               <BulletList className="rhs__community-participation" heading="Some common strategies include" list={communityParticipation} />
             </div>
         }}
-      </SplitContent>
+      </SplitContent> */}
     </div>
   </div>;

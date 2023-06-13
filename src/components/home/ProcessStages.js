@@ -1,8 +1,8 @@
-import { Card, CardHeader, CardContent, Avatar, Typography } from '@mui/material';
+// import { Card, CardHeader, CardContent, Avatar, Typography } from '@mui/material';
 
 export const ProcessStages = ({ stages }) =>
   <div className="process-stages">
-    <div className="process-stages__container">
+    {/* <div className="process-stages__container">
       <Typography className="process-stages__header" variant="h1">
         How to start your home care services
       </Typography>
@@ -23,5 +23,5 @@ export const ProcessStages = ({ stages }) =>
           }
         </Card>
       )}
-    </div>
+    </div> */}
   </div>;

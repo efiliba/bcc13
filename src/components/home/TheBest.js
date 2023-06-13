@@ -1,22 +1,22 @@
-import { Typography, Button, Icon } from '@mui/material';
+// import { Typography, Button, Icon } from '@mui/material';
 
-import { SplitImageContent } from '@/components';
+// import { SplitImageContent } from '@/components';
 
-const PhoneIconColumnLink = () =>
-  <div className="phone-icon-column-link">
-    <Button
-      variant="contained"
-      size="large"
-      startIcon={<Icon className="fa fa-phone-alt fa-2x" />}
-      href="tel:1300 711 380"
-    >
-      1300 711 380
-    </Button>
-  </div>;
+// const PhoneIconColumnLink = () =>
+//   <div className="phone-icon-column-link">
+//     <Button
+//       variant="contained"
+//       size="large"
+//       startIcon={<Icon className="fa fa-phone-alt fa-2x" />}
+//       href="tel:1300 711 380"
+//     >
+//       1300 711 380
+//     </Button>
+//   </div>;
 
 export const TheBest = () =>
   <div className="the-best">
-    <div className="the-best__container">
+    {/* <div className="the-best__container">
       <SplitImageContent image="best-care.png" imageFirst>
         <Typography className="the-best__title" variant="h1">The Best Home Health Care Services Near Me</Typography>
         <Typography variant="body2">
@@ -39,5 +39,5 @@ export const TheBest = () =>
         </Typography>
         <PhoneIconColumnLink />
       </SplitImageContent>
-    </div>
+    </div> */}
   </div>;
