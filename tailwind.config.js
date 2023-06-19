@@ -16,8 +16,6 @@ module.exports = {
     },
     extend: {
       colors: {
-          // primary: "#00b1c5",
-          // secondary: "#7159a6",
         black: "#2f3232",
         text: "#ffeded",
         border: "hsl(var(--border))",
@@ -72,6 +70,12 @@ module.exports = {
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
+      },
+      backgroundImage: {
+        'services': "url('/images/banner.png')",
+        'disability-support': "url('/images/disability-support.jpg')",
+        'domestic-assistance': "url('/images/pots-716579_1280.jpg')",
+        'aged-care': "url('/images/in-home-aged-care.jpg')",
       },
     },
   },

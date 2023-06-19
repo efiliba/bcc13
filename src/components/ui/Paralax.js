@@ -1,17 +1,10 @@
-import styled from '@emotion/styled';
-import { Button, Typography } from '@mui/material';
+import { Button } from '@/components';
 
-import './paralax.scss';
-
-const ParalaxContainer = styled.div`
-  background-image: url(/images/${({ image }) => image});
-`;
-
-export const Paralax = ({ image, title, description, action, onClick }) =>
-  <ParalaxContainer className="paralax" image={image}>
-    <div className="paralax__content">
-      <Typography className="title" variant="h1">{title}</Typography>
-      {description && <Typography className="description" variant="body">{description}</Typography>}
-      {action && <Button className="action" size="large" variant="contained" color="primary" onClick={onClick}>{action}</Button>}
+export const Paralax = ({ className, title, description, action, onClick }) =>
+  <div className={`bg-fixed bg-no-repeat bg-cover bg-top relative after:absolute after:inset-0 after:bg-gray-400 after:opacity-80 after:mix-blend-multiply ${className}`}>
+    <div className="text-white max-w-screen-xl mx-auto py-24 relative z-10 text-center">
+      <h1 className="text-4xl md:text-6xl">{title}</h1>
+      {description && <p className="mt-4 md:text-xl">{description}</p>}
+      {action && <Button className="mt-20 uppercase" onClick={onClick}>{action}</Button>}
     </div>
-  </ParalaxContainer>;
+  </div>;

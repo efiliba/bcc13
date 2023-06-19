@@ -1,5 +1,5 @@
 // export * from './AlternatingColorList';
-// export * from './Banner';
+export * from './Banner';
 // export * from './Book';
 // export * from './BulletList';
 // export * from './Carousel';
@@ -8,7 +8,7 @@
 // export * from './ImageCard';
 // export * from './ImageTextOverlay';
 export * from './NavBar';
-// export * from './Paralax';
+export * from './Paralax';
 // export * from './ServicesNavBar';
 // export * from './SplitContent';
 // export * from './SplitImageContent';
