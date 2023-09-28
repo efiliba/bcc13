@@ -5,7 +5,7 @@ import { usePathname } from 'next/navigation';
 import Link from 'next/link';
 import Image from 'next/image';
 
-import { pageLinks } from '@/services';
+import { navigationLinks } from '@/services';
 
 const Envelope = () =>
   <svg className="w-5 h-5 stroke-primary fill-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
@@ -47,7 +47,7 @@ export const Header = () => {
   const [selectedTabIndex, setSelectedTabIndex] = useState(0);
 
   useEffect(() => {
-    setSelectedTabIndex(pageLinks.findIndex(({ to }) => to === pathname));
+    setSelectedTabIndex(navigationLinks.findIndex(({ to }) => to === pathname));
   }, [pathname]);
 
   const handleHamburgerClick = () => setShow(state => !state);
@@ -78,7 +78,7 @@ export const Header = () => {
             </svg>
           </button>
           <div className={`${show ? 'grid' : 'hidden'} md:grid col-start-2 col-span-2 justify-self-end md:grid-flow-col items-baseline lg:items-center`}>
-            {pageLinks.map(({ to, text }, index) =>
+            {navigationLinks.map(({ to, text }, index) =>
               <Link
                 key={index}
                 className={`p-2 md:text-xs lg:text-base font-semibold hover:bg-primary hover:text-white rounded ${index === selectedTabIndex ? 'text-secondary drop-shadow' : 'text-gray-500'}`}

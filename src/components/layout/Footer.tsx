@@ -7,7 +7,7 @@ export const Footer = () =>
     <div className="max-w-screen-xl mx-auto p-3 grid grid-areas-[menu,logo,contact,copyright] md:grid-areas-[menu_logo_contact,._copyright_.] gap-4 justify-center md:justify-between text-center">
       <div className="grid-in-[menu]">
         <div className="text-primary font-bold">Menu</div>
-        <NavBar className="text-text" />
+        <NavBar className="text-text mt-4" />
       </div>
       <Image
         className="grid-in-[logo] self-center justify-self-center"
@@ -18,7 +18,7 @@ export const Footer = () =>
       />
       <div className="grid-in-[contact]">
         <div className="text-primary font-bold">Contact Us</div>
-        <div className="text-text footer-contact-us__address">
+        <div className="text-text">
           <p className="mt-4">
             105 / 845 Pacific Highway<br />
             Chatswood<br />

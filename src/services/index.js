@@ -1,5 +1,4 @@
 export { default as agedCare } from './aged_care.json';
-export { default as cleaning } from './cleaning.json';
 export { default as communityParticipation } from './community_participation.json';
 export { default as disabilitySupport } from './disability_support.json';
 export { default as fees } from './fees.json';
@@ -8,7 +7,6 @@ export { default as learnMoreOptions } from './learn_more_options.json';
 export { default as navigationLinks } from './navigation_links.json';
 export { default as newsArticles } from './news_articles.json';
 export { default as nursingServices } from './nursing_services.json';
-export { default as pageLinks } from './page_links_temp.json';
 export { default as personalCare } from './personal_care.json';
 export { default as services } from './services.json';
 export { default as slides } from './slides.json';

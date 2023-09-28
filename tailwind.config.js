@@ -76,7 +76,6 @@ module.exports = {
       backgroundImage: {
         'services': "url('/images/banner.png')",
         'disability-support': "url('/images/disability-support.jpg')",
-        'domestic-assistance': "url('/images/pots-716579_1280.jpg')",
         'aged-care': "url('/images/in-home-aged-care.jpg')",
       },
     },

@@ -1,14 +1,26 @@
 [
   {
-    "to": "/ndis-disability-support",
-    "text": "Disability Support"
+    "to": "/",
+    "text": "Home"
   },
   {
-    "to": "/domestic-assistance",
-    "text": "Domestic Assistance"
+    "to": "/about",
+    "text": "About us"
+  },
+  {
+    "to": "/services",
+    "text": "Services"
   },
   {
     "to": "/in-home-aged-care",
-    "text": "In-home Aged Care"
+    "text": "Home Care"
+  },
+  {
+    "to": "/ndis-disability-support",
+    "text": "Support"
+  },
+  {
+    "to": "/contact",
+    "text": "Contact"
   }
 ]
