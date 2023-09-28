@@ -1,4 +1,4 @@
-// export * from './AlternatingColorList';
+export * from './AlternatingColorList';
 export * from './Banner';
 // export * from './Book';
 // export * from './BulletList';
@@ -10,7 +10,7 @@ export * from './Banner';
 export * from './NavBar';
 export * from './Paralax';
 // export * from './ServicesNavBar';
-// export * from './SplitContent';
+export * from './SplitContent';
 // export * from './SplitImageContent';
 // export * from './Table';
 // export * from './TableWithHeader';

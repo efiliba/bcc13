@@ -4,6 +4,6 @@ export * from './home';
 export * from './agedCare';
 export * from './disabilitySupport';
 export * from './domesticAssistance';
-export * from './ourServices';
+export * from './services';
 
 export * from './Location';

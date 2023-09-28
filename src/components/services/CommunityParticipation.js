@@ -7,6 +7,7 @@ import { communityParticipation } from '@/services';
 export const CommunityParticipation = () =>
   <div className="community-participation">
     <div className="community-participation__container">
+    Community Participation
       {/* <SplitContent>
         {{
           lhs:

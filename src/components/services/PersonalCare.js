@@ -7,6 +7,7 @@
 export const PersonalCare = () =>
   <div className="personal-care">
     <div className="personal-care__container">
+    Personal Care
       {/* <SplitContent>
         {{
           lhs:

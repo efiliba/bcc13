@@ -1,8 +1,8 @@
-import { Typography } from '@mui/material';
-
-import './alternating-color-list.scss';
-
 export const AlternatingColorList = ({ list }) =>
-  <div className="alternating-color-list">
-    {list.map((row, index) => <Typography key={index} className="alternating-color-list__row">{row}</Typography>)}
+  <div>
+    {list.map((row, index) =>
+      <p key={index} className={`mt-4 px-10 py-4 ${index % 2 === 0 ? 'text-primary bg-primary-100' : 'text-secondary bg-secondary-100'}`}>       
+        {row}
+      </p>
+    )}
   </div>;

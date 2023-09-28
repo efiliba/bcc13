@@ -2,9 +2,10 @@
 
 // import { SplitImageContent } from '@/components';
 
-export const Range = () =>
+export const ServicesRange = () =>
   <div className="range">
     <div className="range__container">
+    Services Range
       {/* <SplitImageContent image="our-services.png" imageFirst>
         <Typography className="range__pre-title">Our Services</Typography>
         <Typography className="range__title" variant="h1">Our Comprehensive Range Of Services Cater To Every Need</Typography>

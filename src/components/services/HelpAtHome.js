@@ -5,6 +5,7 @@
 export const HelpAtHome = () =>
   <div className="help-at-home">
     <div className="help-at-home__container">
+    Help At        Home
       {/* <ImageTextOverlay image="help-at-home.png">
         <>
           <Typography className="help-at-home__pre-title">Help At Home</Typography>
@@ -18,5 +19,5 @@ export const HelpAtHome = () =>
           </Typography>
         </>
       </ImageTextOverlay> */}
-    </div>
+    </div> 
   </div>;
