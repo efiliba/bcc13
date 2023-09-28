@@ -1,4 +1,6 @@
-import { MainBanner } from '@/components';
+import { MainBanner, TheBest } from '@/components';
+// import { ServicesNavBar, MainBanner, Services, ProcessStages, , Why, LearnMoreOptions, LiveAtHome, SupportPackages, Testimonials } from '@/components';
+import { tiles, services, learnMoreOptions, stages, supportPackages, testimonials } from '@/services';
 
 const Home = () =>
   <main className="">
@@ -8,6 +10,15 @@ const Home = () =>
       description="Best Choice Care: Providing Healthcare in Sydney, Australia. Live in your own home, on your own terms."
       action="Learn More"
     />
+    {/* <ServicesNavBar /> */}
+    <TheBest />
+    {/* <Why tiles={tiles} /> */}
+    {/* <LearnMoreOptions options={learnMoreOptions} /> */}
+    {/* <Services services={services} /> */}
+    {/* <ProcessStages stages={stages} /> */}
+    {/* <LiveAtHome /> */}
+    {/* <SupportPackages packages={supportPackages} /> */}
+    {/* <Testimonials testimonials={testimonials} /> */}
   </main>;
   
 export default Home;

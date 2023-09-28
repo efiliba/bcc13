@@ -1,15 +1,15 @@
-import classNames from 'classnames';
+import Image from 'next/image';
 
-import './split-image-content.scss';
-
-export const SplitImageContent = ({ imageClassName, contentClassName, image, imageFirst, children }) =>
-  <div className={classNames('split-image-content', { 'image-first': imageFirst })}>
-    <img
-      className={classNames('split-image-content__image', { [`${imageClassName}`]: imageClassName })}
+export const SplitImageContent = ({ image, imageFirst, children }) =>
+  <div className={`px-3 py-24 md:py-32 grid md:grid-cols-2 gap-x-20 gap-y-10 grid-areas-[image,text] md:grid-areas-[${imageFirst ? 'image_text' : 'text_image'}]`}>
+    <Image
+      className="grid-in-[image]"
       src={`/images/${image}`}
+      width={743}
+      height={743}
       alt={image}
     />
-    <div className={classNames('split-image-content__content', { [`${contentClassName}`]: contentClassName })}>
+    <div className="grid-in-[text]">
       {children}
     </div>
   </div>;

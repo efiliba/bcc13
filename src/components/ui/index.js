@@ -11,7 +11,7 @@ export * from './NavBar';
 export * from './Paralax';
 // export * from './ServicesNavBar';
 export * from './SplitContent';
-// export * from './SplitImageContent';
+export * from './SplitImageContent';
 // export * from './Table';
 // export * from './TableWithHeader';
 // export * from './Tile';
