@@ -78,6 +78,9 @@ module.exports = {
         'disability-support': "url('/images/disability-support.jpg')",
         'aged-care': "url('/images/in-home-aged-care.jpg')",
       },
+      gridTemplateColumns: {
+        auto: 'repeat(auto-fill, minmax(20rem, 1fr))',
+      },
     },
   },
   plugins: [

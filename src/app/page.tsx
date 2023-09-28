@@ -1,5 +1,5 @@
-import { MainBanner, TheBest } from '@/components';
-// import { ServicesNavBar, MainBanner, Services, ProcessStages, , Why, LearnMoreOptions, LiveAtHome, SupportPackages, Testimonials } from '@/components';
+import { MainBanner, TheBest, Why } from '@/components';
+// import { ServicesNavBar, MainBanner, Services, ProcessStages, , , LearnMoreOptions, LiveAtHome, SupportPackages, Testimonials } from '@/components';
 import { tiles, services, learnMoreOptions, stages, supportPackages, testimonials } from '@/services';
 
 const Home = () =>
@@ -12,7 +12,7 @@ const Home = () =>
     />
     {/* <ServicesNavBar /> */}
     <TheBest />
-    {/* <Why tiles={tiles} /> */}
+    <Why tiles={tiles} />
     {/* <LearnMoreOptions options={learnMoreOptions} /> */}
     {/* <Services services={services} /> */}
     {/* <ProcessStages stages={stages} /> */}

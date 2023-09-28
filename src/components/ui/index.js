@@ -15,7 +15,7 @@ export * from './SplitImageContent';
 // export * from './Table';
 // export * from './TableWithHeader';
 // export * from './Tile';
-// export * from './Tiles';
+export * from './Tiles';
 
 export * from './Container';
 

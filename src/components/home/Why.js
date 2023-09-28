@@ -1,21 +1,19 @@
-// import { Typography } from '@mui/material';
-
-// import { Tiles } from '@/components';
+import { Tiles } from '@/components';
 
 export const Why = ({ tiles }) =>
-  <div className="why">
-    {/* <div className="why__container">
-      <Typography variant="h1">Why Choose In-Home Care?</Typography>
-      <Typography variant="h4">
+  <div className="px-3 pt-14 pb-20 sm:py-24 bg-gray-100">
+    <div className="max-w-screen-xl mx-auto text-center">
+      <h1 className="font-bold text-2xl md:text-4xl">Why Choose In-Home Care?</h1>
+      <h4 className="mt-8 font-bold text-xl">
         In-Home Care Offers A Dignifying, Reliable, And Comfortable Care Experience
-      </Typography>
-      <Typography variant="body2" component="p">
+      </h4>
+      <p className="mt-4 sm:px-[min(6.25rem,8%)]">
         Everyone knows that there is no place like home. We have amazing support workers to assist you with tasks
         that are becomming difficult, home care allows you to maintain your independence for longer. You can stay in a
         familiar place surrounded by your friends and family in the community. Home care allows you to have more
         control of your environment and how you want your care or assistance to be delivered. Live in your own home, on
         your own&nbsp;terms.
-      </Typography>
+      </p>
       <Tiles tiles={tiles} />
-    </div> */}
+    </div>
   </div>;
