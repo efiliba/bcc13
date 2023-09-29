@@ -3,9 +3,9 @@ module.exports = {
   images: {
     formats: ['image/avif', 'image/webp'],
     remotePatterns: [{
-      protocol: 'http',
-      hostname: 'localhost',
-      port: '3000',
+      protocol: 'https',
+      hostname: 'main.dkvdr0mkm5359.amplifyapp.com',
+      port: '',
       pathname: '/images/**'
     }]
   }
