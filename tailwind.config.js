@@ -74,9 +74,10 @@ module.exports = {
         "accordion-up": "accordion-up 0.2s ease-out",
       },
       backgroundImage: {
-        'services': "url('/images/banner.png')",
+        services: "url('/images/banner.png')",
         'disability-support': "url('/images/disability-support.jpg')",
         'aged-care': "url('/images/in-home-aged-care.jpg')",
+        'location': "url('/images/map-background.jpg')",
       },
       gridTemplateColumns: {
         auto: 'repeat(auto-fill, minmax(20rem, 1fr))',

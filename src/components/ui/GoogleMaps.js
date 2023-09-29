@@ -1,8 +1,9 @@
-import { Card } from '@mui/material';
+"use client";
+
 import GoogleMapReact from 'google-map-react';
 
-export const GoogleMaps = () =>
-  <Card className="google-maps">
+export const GoogleMaps = ({ className }) =>
+  <div className={className}>
     <GoogleMapReact
       bootstrapURLKeys={{
         key: process.env.NEXT_PUBLIC_GOOGLE_MAPS_KEY
@@ -13,4 +14,4 @@ export const GoogleMaps = () =>
       }}
       defaultZoom={12}
     />
-  </Card>;
+  </div>;

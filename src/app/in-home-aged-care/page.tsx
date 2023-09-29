@@ -1,6 +1,6 @@
 "use client";
 
-import { Paralax } from '@/components';
+import { Paralax, Location } from '@/components';
 
 // import { Range, Nursing, PersonalCare, CommunityParticipation, HelpAtHome } from './components';
 
@@ -15,6 +15,8 @@ const AgedCare = () =>
       action="SERVICE REQUEST FORM"
       onClick={handleClick}
     />
+    <Location />
+
     {/* <Range />
     <Nursing />
     <PersonalCare />
