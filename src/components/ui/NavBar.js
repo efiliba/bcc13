@@ -6,7 +6,7 @@ export const NavBar = ({className}) =>
   <nav className={className}>
     <ul>
       {navigationLinks.map((link, index) =>
-        <li key={`link${index}`} className="pt-1">
+        <li key={`link${index}`} className="pt-1 hover:text-primary">
           <Link href={link.to}>{link.text}</Link>
         </li>
       )}

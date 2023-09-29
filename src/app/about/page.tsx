@@ -1,6 +1,6 @@
 const About = () =>
   <div className="">
-    About
+    About Us
   </div>;
 
 export default About;

@@ -4,7 +4,7 @@ import { nursingServices } from '@/services';
 
 export const Nursing = () =>
   <div className="py-28 md:py-20 bg-gray-200">
-    <div className="max-w-screen-xl mx-auto">
+    <div className="px-3 max-w-screen-xl mx-auto">
       <SplitContent>
         {{
           lhs:
