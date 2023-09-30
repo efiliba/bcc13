@@ -1,7 +1,7 @@
 export * from './AlternatingColorList';
 export * from './Banner';
 export * from './Book';
-// export * from './BulletList';
+export * from './BulletList';
 export * from './Card';
 // export * from './Carousel';
 export * from './GoogleMaps';
@@ -10,6 +10,7 @@ export * from './GoogleMaps';
 // export * from './ImageTextOverlay';
 export * from './NavBar';
 export * from './Paralax';
+export * from './PreTitleDescription';
 // export * from './ServicesNavBar';
 export * from './SplitContent';
 export * from './SplitImageContent';

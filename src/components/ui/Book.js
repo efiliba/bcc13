@@ -1,12 +1,11 @@
-import { SplitImageContent } from './SplitImageContent';
+import { Container, SplitImageContent } from '@/components';
 
 export const Book = ({ pages }) =>
-  <div className="bg-white">
-    <div className="max-w-screen-xl mx-auto px-3 py-24 md:py-32 grid gap-y-20 md:gap-y-8">
+  <Container>
+    <div className="grid gap-y-20 md:gap-y-8">
       {pages.map(({ image, heading, text, list }, index) =>
         <SplitImageContent
           key={index}
-          className="items-center"
           imageClassName="border-8 border-gray-100"
           image={image}
           imageFirst={index % 2 !== 0}
@@ -17,10 +16,10 @@ export const Book = ({ pages }) =>
               <p key={index} className="pt-3">{paragraph}</p>
             )}
             {list &&
-              <ul>
+              <ul className="list-disc  pl-4">
                 {list.map((item, index) =>
-                  <li key={index}>
-                    <p>{item}</p>
+                  <li key={index} className="pt-3">
+                    {item}
                   </li>
                 )}
               </ul>
@@ -29,4 +28,4 @@ export const Book = ({ pages }) =>
         </SplitImageContent>
       )}
     </div>
-  </div>;
+  </Container>;

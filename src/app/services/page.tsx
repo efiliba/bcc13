@@ -1,13 +1,12 @@
-import { Banner, ServicesRange, Nursing, PersonalCare, CommunityParticipation, HelpAtHome } from '@/components';
+import { Banner, ServicesRange, Nursing, PersonalCare, CommunityParticipation } from '@/components';
 
 const Services = () =>
-  <div className="">
+  <>
     <Banner className="bg-services" title="Our Services" />
-    {/* <ServicesRange /> */}
+    <ServicesRange />
     <Nursing />
-    {/* <PersonalCare />
+    <PersonalCare />
     <CommunityParticipation />
-    <HelpAtHome /> */}
-  </div>;
+  </>;
 
 export default Services;

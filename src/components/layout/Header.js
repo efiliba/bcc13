@@ -69,6 +69,7 @@ export const Header = () => {
                 key={index}
                 className={`p-2 md:text-xs lg:text-base font-semibold hover:bg-primary hover:text-white rounded ${index === selectedTabIndex ? 'text-secondary drop-shadow' : 'text-gray-500'}`}
                 href={to}
+                onClick={handleHamburgerClick}
               >
                 {text}
               </Link>

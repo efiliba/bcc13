@@ -3,7 +3,7 @@ import { MainBanner, TheBest, Why, ProcessStages } from '@/components';
 import { tiles, services, learnMoreOptions, stages, supportPackages, testimonials } from '@/services';
 
 const Home = () =>
-  <main className="">
+  <main>
     <MainBanner
       image="/images/aged-care-at-home.png"
       title="Quality In-Home Care"

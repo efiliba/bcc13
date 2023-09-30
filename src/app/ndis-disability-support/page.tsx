@@ -1,12 +1,13 @@
 "use client";
 
-import { Paralax, Location } from '@/components';
-// import { Range, Nursing, PersonalCare, CommunityParticipation, HelpAtHome } from './components';
+import { Paralax, Book, Location } from '@/components';
+
+import { disabilitySupport } from '@/services';
 
 const handleClick = () => window.open('https://www.cognitoforms.com/BestChoiceCare1/NDISReferralFormBestChoiceCare');
 
 const DisabilitySupport = () =>
-  <div className="">
+  <>
     <Paralax
       className="bg-disability-support"
       title="NDIS PARTICIPANT REFERRAL"
@@ -14,13 +15,8 @@ const DisabilitySupport = () =>
       action="REFERRAL FORM"
       onClick={handleClick}
     />
+    <Book pages={disabilitySupport} />
     <Location />
-
-    {/* <Range />
-    <Nursing />
-    <PersonalCare />
-    <CommunityParticipation />
-    <HelpAtHome /> */}
-  </div>;
+  </>;
 
 export default DisabilitySupport;

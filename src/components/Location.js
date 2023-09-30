@@ -1,15 +1,16 @@
-import { Card, GoogleMaps } from '@/components';
+import { cn } from '@/lib/utils';
+import { Container, Card, GoogleMaps } from '@/components';
 import { Clock, Location as LocationIcon } from '@/components/icons';
 
 const LocationCard = ({ className, icon, title, content }) =>
-  <Card className={`p-5 bg-primary grid grid-cols-[53px_1fr] gap-4 items-center border-black ${className}`}>
+  <Card className={cn('p-5 bg-primary grid grid-cols-[53px_1fr] gap-4 items-center border-black', className)}>
     <div className="row-span-2">
       {icon}
     </div>
-    <div className="text-3xl text-white">
+    <div className="text-3xl text-text">
       {title}
     </div>
-    <div className="col-start-2 text-xl text-white">
+    <div className="col-start-2 text-xl text-text">
       {content.map((text, index) =>
         <p key={index} className="pb-2">{text}</p>
       )}
@@ -17,9 +18,9 @@ const LocationCard = ({ className, icon, title, content }) =>
   </Card>;
 
 export const Location = () =>
-  <div className="bg-location bg-center bg-cover">
-    <div className="max-w-screen-xl mx-auto px-3 pt-10 pb-16 grid lg:grid-cols-2 lg:grid-areas-[header_header,hours_map,here_map] gap-5">
-      <h2 className="font-bold text-xl md:text-3xl text-center text-white lg:grid-in-[header] col-span-full justify-self-center">
+  <Container className="bg-location bg-center bg-cover pt-10 pb-16 md:pt-10 md:pb-16 ">
+    <div className="grid lg:grid-cols-2 lg:grid-areas-[header_header,hours_map,here_map] gap-5">
+      <h2 className="font-bold text-xl md:text-3xl text-center text-text lg:grid-in-[header] col-span-full justify-self-center">
         It&apos;s time to make the best choice, with Best&nbsp;Choice&nbsp;Care.
       </h2>
       <LocationCard
@@ -38,4 +39,4 @@ export const Location = () =>
       />
       <GoogleMaps className="h-96 lg:h-auto lg:grid-in-[map]" />
     </div>
-  </div>;
+  </Container>;

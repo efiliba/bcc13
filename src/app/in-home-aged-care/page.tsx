@@ -7,7 +7,7 @@ import { agedCare } from '@/services';
 const handleClick = () => window.open("https://www.cognitoforms.com/BestChoiceCare1/HomeCareRequestReferralForm");
 
 const AgedCare = () =>
-  <div className="">
+  <>
     <Paralax
       className="bg-aged-care"
       title="IN-HOME AGED CARE"
@@ -17,6 +17,6 @@ const AgedCare = () =>
     />
     <Book pages={agedCare} />
     <Location />
-  </div>;
+  </>;
 
 export default AgedCare;

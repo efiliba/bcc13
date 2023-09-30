@@ -1,10 +1,10 @@
 import Link from 'next/link';
 
-import { SplitImageContent, Button } from '@/components';
+import { Container, SplitImageContent, Button } from '@/components';
 
 export const TheBest = () =>
-  <div className="bg-white">
-    <SplitImageContent className="max-w-screen-xl mx-auto px-3 py-24 md:py-32" image="best-care.png" imageFirst>
+  <Container>
+    <SplitImageContent image="best-care.png" imageFirst>
       <h1 className="font-bold text-2xl md:text-4xl">The Best Home Health Care Services Near Me</h1>
       <p className="mt-4">
         Best Choice Care aims to provide top-notch home care that feels like it comes from a family member.
@@ -31,4 +31,4 @@ export const TheBest = () =>
         </Button>
       </Link>
     </SplitImageContent>
-  </div>;
+  </Container>;

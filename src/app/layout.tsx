@@ -1,6 +1,6 @@
 import { ReactNode } from 'react';
 
-import { Container, Header, Footer, AcknowledgementOfCountry } from '@/components';
+import { Header, Footer, AcknowledgementOfCountry } from '@/components';
 
 import './globals.css';
 
@@ -15,9 +15,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
       <body>
         <Header />
         {children}
-        <Container className="bg-gray-100">
-          <AcknowledgementOfCountry />
-        </Container>
+        <AcknowledgementOfCountry />
         <Footer />
       </body>
     </html>

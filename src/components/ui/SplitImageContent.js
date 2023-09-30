@@ -3,7 +3,11 @@ import { cn } from "@/lib/utils";
 import Image from 'next/image';
 
 export const SplitImageContent = ({ className, imageClassName, image, imageFirst, children }) =>
-  <div className={cn('grid md:grid-cols-2 gap-x-20 gap-y-10 grid-areas-[image,text]', imageFirst ? 'md:grid-areas-[image_text]' : 'md:grid-areas-[text_image]', className)}>
+  <div className={cn(
+    'grid md:grid-cols-2 gap-x-20 gap-y-10 grid-areas-[image,text] items-center',
+    imageFirst ? 'md:grid-areas-[image_text]' : 'md:grid-areas-[text_image]',
+    className
+  )}>
     <Image
       className={`grid-in-[image] ${imageClassName}`}
       src={`/images/${image}`}

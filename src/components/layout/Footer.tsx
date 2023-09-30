@@ -3,8 +3,8 @@ import Image from 'next/image';
 import { NavBar } from '@/components';
 
 export const Footer = () =>
-  <footer className="bg-black">
-    <div className="max-w-screen-xl mx-auto p-3 grid grid-areas-[menu,logo,contact,copyright] md:grid-areas-[menu_logo_contact,._copyright_.] gap-4 justify-center md:justify-between text-center">
+  <footer className="bg-black p-3">
+    <div className="max-w-screen-xl mx-auto grid grid-areas-[menu,logo,contact,copyright] md:grid-areas-[menu_logo_contact,._copyright_.] gap-4 justify-center md:justify-between text-center">
       <div className="grid-in-[menu]">
         <div className="text-primary font-bold">Menu</div>
         <NavBar className="text-text mt-4" />

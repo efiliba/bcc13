@@ -1,8 +1,8 @@
-import { Tiles } from '@/components';
+import { Container, Tiles } from '@/components';
 
 export const Why = ({ tiles }) =>
-  <div className="px-3 pt-14 pb-20 sm:py-24 bg-gray-100">
-    <div className="max-w-screen-xl mx-auto text-center">
+  <Container className="bg-gray-100">
+    <div className="text-center">
       <h1 className="font-bold text-2xl md:text-4xl">Why Choose In-Home Care?</h1>
       <h4 className="mt-8 font-bold text-xl">
         In-Home Care Offers A Dignifying, Reliable, And Comfortable Care Experience
@@ -16,4 +16,4 @@ export const Why = ({ tiles }) =>
       </p>
       <Tiles tiles={tiles} />
     </div>
-  </div>;
+  </Container>;
