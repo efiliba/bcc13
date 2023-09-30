@@ -3,14 +3,14 @@ import { Container, Card, GoogleMaps } from '@/components';
 import { Clock, Location as LocationIcon } from '@/components/icons';
 
 const LocationCard = ({ className, icon, title, content }) =>
-  <Card className={cn('p-5 bg-primary grid grid-cols-[53px_1fr] gap-4 items-center border-black', className)}>
+  <Card className={cn('p-3 sm:p-5 bg-primary grid grid-cols-[max-content_1fr] gap-2 sm:gap-4 items-center border-black', className)}>
     <div className="row-span-2">
       {icon}
     </div>
     <div className="text-3xl text-text">
       {title}
     </div>
-    <div className="col-start-2 text-xl text-text">
+    <div className="col-start-2 text-base sm:text-xl text-text">
       {content.map((text, index) =>
         <p key={index} className="pb-2">{text}</p>
       )}
