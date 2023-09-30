@@ -1,24 +1,24 @@
-import { Card, CardHeader, CardDescription, GoogleMaps } from '@/components';
+import { Card, GoogleMaps } from '@/components';
 import { Clock, Location as LocationIcon } from '@/components/icons';
 
 const LocationCard = ({ className, icon, title, content }) =>
-  <Card className={`py-5 bg-primary grid grid-cols-[53px_1fr] gap-4 items-center border-black ${className}`}>
-    <CardHeader className="row-span-2">
+  <Card className={`p-5 bg-primary grid grid-cols-[53px_1fr] gap-4 items-center border-black ${className}`}>
+    <div className="row-span-2">
       {icon}
-    </CardHeader>
-    <CardDescription className="text-3xl text-white">
+    </div>
+    <div className="text-3xl text-white">
       {title}
-    </CardDescription>
-    <CardDescription className="col-start-2 text-xl text-white">
+    </div>
+    <div className="col-start-2 text-xl text-white">
       {content.map((text, index) =>
         <p key={index} className="pb-2">{text}</p>
       )}
-    </CardDescription>
+    </div>
   </Card>;
 
 export const Location = () =>
   <div className="bg-location bg-center bg-cover">
-    <div className="px-3 pt-10 pb-16 grid lg:grid-cols-2 lg:grid-areas-[header_header,hours_map,here_map] gap-5">
+    <div className="max-w-screen-xl mx-auto px-3 pt-10 pb-16 grid lg:grid-cols-2 lg:grid-areas-[header_header,hours_map,here_map] gap-5">
       <h2 className="font-bold text-xl md:text-3xl text-center text-white lg:grid-in-[header] col-span-full justify-self-center">
         It&apos;s time to make the best choice, with Best&nbsp;Choice&nbsp;Care.
       </h2>

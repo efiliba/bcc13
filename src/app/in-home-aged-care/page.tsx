@@ -1,8 +1,8 @@
 "use client";
 
-import { Paralax, Location } from '@/components';
+import { Paralax, Book, Location } from '@/components';
 
-// import { Range, Nursing, PersonalCare, CommunityParticipation, HelpAtHome } from './components';
+import { agedCare } from '@/services';
 
 const handleClick = () => window.open("https://www.cognitoforms.com/BestChoiceCare1/HomeCareRequestReferralForm");
 
@@ -15,13 +15,8 @@ const AgedCare = () =>
       action="SERVICE REQUEST FORM"
       onClick={handleClick}
     />
+    <Book pages={agedCare} />
     <Location />
-
-    {/* <Range />
-    <Nursing />
-    <PersonalCare />
-    <CommunityParticipation />
-    <HelpAtHome /> */}
   </div>;
 
 export default AgedCare;

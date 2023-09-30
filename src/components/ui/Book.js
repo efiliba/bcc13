@@ -1,32 +1,32 @@
-import { Typography } from '@mui/material';
-
 import { SplitImageContent } from './SplitImageContent';
 
-import './book.scss';
-
 export const Book = ({ pages }) =>
-  <div className="book">
-    <div className="book__container">
+  <div className="bg-white">
+    <div className="max-w-screen-xl mx-auto px-3 py-24 md:py-32 grid gap-y-20 md:gap-y-8">
       {pages.map(({ image, heading, text, list }, index) =>
-        <div key={index}>
-        <SplitImageContent imageClassName="book-page__image" image={image} imageFirst={index % 2 !== 0}>
-          <div className="book-page__content">
-            <Typography variant="h2">{heading}</Typography>
+        <SplitImageContent
+          key={index}
+          className="items-center"
+          imageClassName="border-8 border-gray-100"
+          image={image}
+          imageFirst={index % 2 !== 0}
+        >
+          <div className="pt-2">
+            <h2 className="font-bold text-xl md:text-2xl">{heading}</h2>
             {text.map((paragraph, index) =>
-              <Typography key={index} className="paragraph" variant="body2">{paragraph}</Typography>
+              <p key={index} className="pt-3">{paragraph}</p>
             )}
             {list &&
               <ul>
                 {list.map((item, index) =>
                   <li key={index}>
-                    <Typography variant="body2">{item}</Typography>
+                    <p>{item}</p>
                   </li>
                 )}
               </ul>
             }
           </div>
         </SplitImageContent>
-        </div>
       )}
     </div>
   </div>;

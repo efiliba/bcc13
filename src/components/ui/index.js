@@ -1,6 +1,6 @@
 export * from './AlternatingColorList';
 export * from './Banner';
-// export * from './Book';
+export * from './Book';
 // export * from './BulletList';
 export * from './Card';
 // export * from './Carousel';
