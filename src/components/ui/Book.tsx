@@ -1,6 +1,15 @@
 import { Container, SplitImageContent } from '@/components';
 
-export const Book = ({ pages }) =>
+interface Props {
+  pages: {
+    image: string;
+    heading: string;
+    text: string[];
+    list?: string[];
+  }[];
+}
+
+export const Book = ({ pages }: Props) =>
   <Container contentClassName="grid gap-y-20 md:gap-y-8">
     {pages.map(({ image, heading, text, list }, index) =>
       <SplitImageContent

@@ -8,7 +8,7 @@ interface Props {
   imageClassName?: string;
   contentClassName?: string;
   image: string;
-  imageFirst: boolean;
+  imageFirst?: boolean;
   children: ReactNode;
 }
 

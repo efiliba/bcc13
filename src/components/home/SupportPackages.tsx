@@ -1,6 +1,15 @@
 import { Container, IconCard } from '@/components';
 
-export const SupportPackages = ({ packages }) =>
+interface Props {
+  packages: {
+    icon: string;
+    title: string;
+    description: string;
+    link: string;
+  }[];
+}
+
+export const SupportPackages = ({ packages }: Props) =>
   <Container>
     <h1 className="text-2xl md:text-4xl text-center pb-10">
       Home Care Support Options

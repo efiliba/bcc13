@@ -3,7 +3,14 @@ import Link from 'next/link';
 
 import { Card, CardHeader, CardContent, CardFooter, Button } from '@/components';
 
-export const IconCard = ({ icon, title, description, link }) =>
+interface Props {
+  icon: string;
+  title: string;
+  description: string;
+  link: string;
+}
+
+export const IconCard = ({ icon, title, description, link }: Props) =>
   <Card>
     <CardHeader className="items-center">
       <Image className="h-[41px]" width={53} height={41} src={`/icons/${icon}.svg`} alt="icon" />

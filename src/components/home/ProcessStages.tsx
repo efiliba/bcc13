@@ -2,7 +2,17 @@ import Image from 'next/image';
 
 import { Container, Card, CardHeader } from '@/components';
 
-const Tile = ({ stage, icon, heading }) =>
+interface TileProps {
+  stage: number;
+  icon: string;
+  heading: string;
+}
+
+interface Props {
+  stages: TileProps[];
+}
+
+const Tile = ({ stage, icon, heading }: TileProps) =>
   <Card className="relative md:col-span-2 grid text-left sm:[&:nth-last-child(2)]:col-start-2">
     <div className="absolute top-[-10px] left-[-10px] bg-primary rounded-full w-7 leading-7 text-text text-center">
       {stage}
@@ -13,7 +23,7 @@ const Tile = ({ stage, icon, heading }) =>
     </CardHeader>
   </Card>;
 
-export const ProcessStages = ({ stages }) =>
+export const ProcessStages = ({ stages }: Props) =>
   <Container contentClassName="text-center grid sm:grid-cols-2 md:grid-cols-6 gap-8">
     <h1 className="font-bold text-2xl md:text-4xl col-span-full mb-4 md:mb-16">
       How to start your home care services

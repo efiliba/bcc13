@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, ReactNode } from 'react';
 import { usePathname } from 'next/navigation';
 import Link from 'next/link';
 import Image from 'next/image';
@@ -9,7 +9,12 @@ import { Envelope, FaceBook, Location } from '@/components/icons';
 
 import { navigationLinks } from '@/services';
 
-const IconText = ({ icon, text }) =>
+interface IconTextProps {
+  icon: ReactNode;
+  text: string;
+}
+
+const IconText = ({ icon, text }: IconTextProps) =>
   <div className="grid grid-cols-[max-content_max-content]">
     {icon}
     <div className="text-sm text-text">{text}</div>

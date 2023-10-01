@@ -2,11 +2,15 @@
 
 import GoogleMapReact from 'google-map-react';
 
-export const GoogleMaps = ({ className }) =>
+interface Props {
+  className: string;
+}
+
+export const GoogleMaps = ({ className }: Props) =>
   <div className={className}>
     <GoogleMapReact
       bootstrapURLKeys={{
-        key: process.env.NEXT_PUBLIC_GOOGLE_MAPS_KEY
+        key: process.env.NEXT_PUBLIC_GOOGLE_MAPS_KEY || ''
       }}
       defaultCenter={{
         lat: -33.901141,

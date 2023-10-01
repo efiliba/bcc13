@@ -1,8 +1,17 @@
+import { ReactNode } from 'react';
+
 import { cn } from '@/lib/utils';
 import { Container, Card, GoogleMaps } from '@/components';
 import { Clock, Location as LocationIcon } from '@/components/icons';
 
-const LocationCard = ({ className, icon, title, content }) =>
+interface Props {
+  className: string;
+  icon: ReactNode;
+  title: string;
+  content: string[];
+}
+
+const LocationCard = ({ className, icon, title, content }: Props) =>
   <Card className={cn('p-3 sm:p-5 bg-primary grid grid-cols-[max-content_1fr] gap-2 sm:gap-4 items-center border-black', className)}>
     <div className="row-span-2">
       {icon}

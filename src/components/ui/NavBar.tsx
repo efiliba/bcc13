@@ -2,7 +2,11 @@ import Link from 'next/link';
 
 import { navigationLinks } from '@/services';
 
-export const NavBar = ({className}) =>
+interface Props {
+  className: string;
+}
+
+export const NavBar = ({ className }: Props) =>
   <nav className={className}>
     <ul>
       {navigationLinks.map((link, index) =>

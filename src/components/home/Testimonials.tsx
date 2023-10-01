@@ -1,6 +1,14 @@
 import { Container, SplitImageContent, Card, CardContent } from '@/components';
 
-export const Testimonials = ({ testimonials }) => {
+interface Props {
+  testimonials: {
+    name: string;
+    location: string;
+    message: string[];
+  }[];
+}
+
+export const Testimonials = ({ testimonials }: Props) => {
   const { name, location, message } = testimonials[0];
 
   return (

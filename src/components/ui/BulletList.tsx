@@ -1,6 +1,13 @@
 import { cn } from '@/lib/utils';
 
-export const BulletList = ({ className, itemsClassName, heading, list }) =>
+interface Props {
+  className: string;
+  itemsClassName?: string;
+  heading: string;
+  list: string[];
+}
+
+export const BulletList = ({ className, itemsClassName, heading, list }: Props) =>
   <div className={className}>
     <h3 className="font-bold text-xl md:text-2xl pb-4">{heading}</h3>
     <ul className="list-disc text-2xl pl-4">

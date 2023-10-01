@@ -1,6 +1,10 @@
-import { Container, Tiles } from '@/components';
+import { Container, Tiles, TileProps } from '@/components';
 
-export const Why = ({ tiles }) =>
+interface Props {
+  tiles: TileProps[];
+}
+
+export const Why = ({ tiles }: Props) =>
   <Container className="bg-gray-100" contentClassName="text-center">
     <h1 className="font-bold text-2xl md:text-4xl">Why Choose In-Home Care?</h1>
     <h4 className="mt-8 font-bold text-xl">

@@ -1,6 +1,14 @@
 import { Container, Tile } from '@/components';
 
-export const Services = ({services}) =>
+interface Props {
+  services: {
+    header: string;
+    description: string;
+    link: string;
+  }[];
+}
+
+export const Services = ({ services }: Props) =>
   <Container className="bg-services bg-cover" contentClassName="grid grid-cols-auto-xl gap-x-12 gap-y-5">
     {services.map(({ header, description, link }, index) => {
       const solid = index % 2 === 0;

@@ -3,7 +3,14 @@ import Link from 'next/link';
 
 import { Button } from '@/components';
 
-export const MainBanner = ({ image, title, description, action }) =>
+interface Props {
+  image: string;
+  title: string;
+  description: string;
+  action: string;
+}
+
+export const MainBanner = ({ image, title, description, action }: Props) =>
   <div className="relative min-h-[700px] grid items-center justify-items-center">
     <Image className="object-cover" fill src={image} alt={description} priority />
     <div className="absolute text-text text-center md:text-left px-3 w-full max-w-screen-xl mx-auto">
