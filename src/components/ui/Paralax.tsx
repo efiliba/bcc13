@@ -5,15 +5,16 @@ import { Button } from '@/components';
 
 interface Props {
   className?: string;
+  contentClassName?: string;
   title: string;
-  description: string;
-  action: string;
-  onClick: MouseEventHandler<HTMLButtonElement>;
+  description?: string;
+  action?: string;
+  onClick?: MouseEventHandler<HTMLButtonElement>;
 }
 
-export const Paralax = ({ className, title, description, action, onClick }: Props) =>
-  <div className={cn('bg-fixed bg-no-repeat bg-cover bg-top relative after:absolute after:inset-0 after:bg-gray-400 after:opacity-80 after:mix-blend-multiply', className)}>
-    <div className="text-text max-w-screen-xl mx-auto py-24 relative z-10 text-center">
+export const Paralax = ({ className, contentClassName, title, description, action, onClick }: Props) =>
+  <div className={cn('relative min-h-[420px] bg-fixed bg-no-repeat bg-cover bg-top after:absolute after:inset-0 after:bg-gray-400 after:opacity-80 after:mix-blend-multiply', className)}>
+    <div className={cn('relative text-text max-w-screen-xl mx-auto py-24 z-10 text-center', contentClassName)}>
       <h1 className="text-4xl md:text-6xl">{title}</h1>
       {description && <p className="mt-4 md:text-xl">{description}</p>}
       {action && <Button className="mt-20 uppercase" size="lg" onClick={onClick}>{action}</Button>}

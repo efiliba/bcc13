@@ -1,6 +1,12 @@
+import { Paralax } from '@/components';
+
 const Contact = () =>
-  <div className="">
-    Contact
-  </div>;
+  <>
+    <Paralax
+      className="bg-contact"
+      contentClassName="pt-40"
+      title="Contact Us"
+    />
+  </>;
 
 export default Contact;

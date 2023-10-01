@@ -79,6 +79,8 @@ module.exports = {
         'aged-care': "url('/images/in-home-aged-care.jpg')",
         location: "url('/images/map-background.jpg')",
         services: "url('/images/aged-care-services.png')",
+        about: "url('/images/banner.png')",
+        contact: "url('/images/banner.png')",
       },
       gridTemplateColumns: {
         auto: 'repeat(auto-fill, minmax(20rem, 1fr))',

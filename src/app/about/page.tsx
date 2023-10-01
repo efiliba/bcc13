@@ -1,6 +1,12 @@
+import { Paralax } from '@/components';
+
 const About = () =>
-  <div className="">
-    About Us
-  </div>;
+  <>
+    <Paralax
+      className="bg-about"
+      contentClassName="pt-40"
+      title="About Us"
+    />
+  </>;
 
 export default About;

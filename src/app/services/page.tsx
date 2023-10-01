@@ -1,8 +1,12 @@
-import { Banner, ServicesRange, Nursing, PersonalCare, CommunityParticipation } from '@/components';
+import { Paralax, ServicesRange, Nursing, PersonalCare, CommunityParticipation } from '@/components';
 
 const Services = () =>
   <>
-    <Banner className="bg-services" title="Our Services" />
+    <Paralax
+      className="bg-services bg-auto"
+      contentClassName="pt-40"
+      title="Our Services"
+    />
     <ServicesRange />
     <Nursing />
     <PersonalCare />
