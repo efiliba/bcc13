@@ -1,17 +1,20 @@
-import { Tile } from '@/components';
+import { Container, Tile } from '@/components';
 
 export const Services = ({services}) =>
-  <div className="home-services">
-    <div className="home-services__content">
-      {services.map(({ header, description, link }, index) =>
+  <Container className="bg-services bg-cover" contentClassName="grid grid-cols-auto-xl gap-x-12 gap-y-5">
+    {services.map(({ header, description, link }, index) => {
+      const solid = index % 2 === 0;
+
+      return (
         <Tile
-          className="home-services__content__tile"
+          className={`md:px-16 md:py-14 ${solid ? '' : 'text-text'}`}
+          headerClassName={solid ? 'text-primary' : ''}
           header={header}
           description={description}
           link={link}
           key={`service${index}`}
-          solid={index % 2 === 0}
+          solid={solid}
         />
-      )}
-    </div>
-  </div>;
+      );
+    })}
+  </Container>;

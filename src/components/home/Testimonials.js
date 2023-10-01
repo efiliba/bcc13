@@ -1,46 +1,22 @@
-// import { useState } from 'react';
-// import { Typography, Card, IconButton, Icon } from '@mui/material';
-
-// import { SplitImageContent } from '@/components';
+import { Container, SplitImageContent, Card, CardContent } from '@/components';
 
 export const Testimonials = ({ testimonials }) => {
-  const [ { index, name, location, message, previous, next }, setCurrentTestimonial ] = useState({
-    ...testimonials[0],
-    index: 0,
-    previous: false,
-    next: testimonials.length > 0
-  });
-
-  const handleClick = increment => () =>  {
-    setCurrentTestimonial(({ index }) => ({
-      ...testimonials[index + increment],
-      index: index + increment,
-      previous: index + increment > 0,
-      next: index + increment < testimonials.length - 1
-    }));
-  }
+  const { name, location, message } = testimonials[0];
 
   return (
-    <div className="testimonials">
-      {/* <div className="testimonials__container">
-        <Typography className="testimonials__title mobile" variant="h1">What Our Customers Say</Typography>
-        <SplitImageContent contentClassName="testimonials__content" image="care-feedback.png" imageFirst>
-          <Typography className="testimonials__title tablet" variant="h1">What Our Customers Say</Typography>
-          <Card className="testimonials__card">
+    <Container className="bg-gray-50">
+      <h1 className="md:hidden text-2xl md:text-4xl mb-5 text-center">What Our Customers Say</h1>
+      <SplitImageContent className="gap-8" contentClassName="relative h-full" image="care-feedback.png" imageFirst>
+        <Card className="md:absolute left-[-20%] top-1/2 md:translate-y-[-50%] p-12">
+          <CardContent className="p-0">
             {message.map((text, index) =>
-              <Typography key={index} variant="body2">{text}</Typography>
+              <p key={index} className="text-xl italic pb-4">{text}</p>
             )}
-            <Typography variant="h4">{name}</Typography>
-            <Typography variant="body2">{location}</Typography> */}
-            {/* <IconButton aria-label="Next testimonial" disabled={!next} onClick={handleClick(1)}>
-              <Icon className="fa fa-arrow-right" />
-            </IconButton>
-            <IconButton aria-label="Previous testimonial" disabled={!previous} onClick={handleClick(-1)}>
-              <Icon className="fa fa-arrow-left" />
-            </IconButton> */}
-          {/* </Card>
-        </SplitImageContent>
-      </div> */}
-    </div>
+            <h4 className="font-bold">{name}</h4>
+            <p>{location}</p>
+          </CardContent>
+        </Card>
+      </SplitImageContent>
+    </Container>
   )
 };

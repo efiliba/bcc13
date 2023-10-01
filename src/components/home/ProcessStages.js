@@ -14,13 +14,11 @@ const Tile = ({ stage, icon, heading }) =>
   </Card>;
 
 export const ProcessStages = ({ stages }) =>
-  <Container>
-    <div className="text-center grid sm:grid-cols-2 md:grid-cols-6 gap-8">
-      <h1 className="font-bold text-2xl md:text-4xl col-span-full mb-4 md:mb-16">
-        How to start your home care services
-      </h1>
-      {stages.map(({ stage, icon, heading }) =>
-        <Tile key={stage} stage={stage} icon={icon} heading={heading} />
-      )}
-    </div>
+  <Container contentClassName="text-center grid sm:grid-cols-2 md:grid-cols-6 gap-8">
+    <h1 className="font-bold text-2xl md:text-4xl col-span-full mb-4 md:mb-16">
+      How to start your home care services
+    </h1>
+    {stages.map(({ stage, icon, heading }) =>
+      <Tile key={stage} stage={stage} icon={icon} heading={heading} />
+    )}
   </Container>;

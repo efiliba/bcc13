@@ -77,10 +77,12 @@ module.exports = {
         services: "url('/images/banner.png')",
         'disability-support': "url('/images/disability-support.jpg')",
         'aged-care': "url('/images/in-home-aged-care.jpg')",
-        'location': "url('/images/map-background.jpg')",
+        location: "url('/images/map-background.jpg')",
+        services: "url('/images/aged-care-services.png')",
       },
       gridTemplateColumns: {
         auto: 'repeat(auto-fill, minmax(20rem, 1fr))',
+        'auto-xl': 'repeat(auto-fill, minmax(25rem, 1fr))',
       },
     },
   },
