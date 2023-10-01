@@ -6,6 +6,6 @@ export const Paralax = ({ className, title, description, action, onClick }) =>
     <div className="text-text max-w-screen-xl mx-auto py-24 relative z-10 text-center">
       <h1 className="text-4xl md:text-6xl">{title}</h1>
       {description && <p className="mt-4 md:text-xl">{description}</p>}
-      {action && <Button className="mt-20 uppercase" onClick={onClick}>{action}</Button>}
+      {action && <Button className="mt-20 uppercase" size="lg" onClick={onClick}>{action}</Button>}
     </div>
   </div>;

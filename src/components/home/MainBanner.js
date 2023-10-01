@@ -10,7 +10,7 @@ export const MainBanner = ({ image, title, description, action }) =>
       <h1 className="text-6xl">{title}</h1>
       <h2 className="m-auto md:ml-0 mt-4 text-xl max-w-[550px]">{description}</h2>
       <Link href="/in-home-aged-care" passHref>
-        <Button className="mt-12 uppercase">{action}</Button>
+        <Button className="mt-12 uppercase" size="lg">{action}</Button>
       </Link>
     </div>
   </div>;
