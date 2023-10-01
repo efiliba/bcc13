@@ -8,7 +8,7 @@ export const Footer = () =>
       className="bg-black p-3 md:p-3"
       contentClassName="grid grid-areas-[menu,logo,contact,copyright] md:grid-areas-[menu_logo_contact,._copyright_.] md:grid-cols-3 gap-4 text-center"
     >
-      <div className="grid-in-[menu] justify-self-start">
+      <div className="grid-in-[menu] md:justify-self-start">
         <div className="text-primary font-bold">Menu</div>
         <NavBar className="text-text mt-4" />
       </div>
@@ -22,7 +22,7 @@ export const Footer = () =>
         />
         <div className="text-black">version: {process.env.NEXT_PUBLIC_VERSION}</div>
       </div>
-      <div className="grid-in-[contact] justify-self-end">
+      <div className="grid-in-[contact] md:justify-self-end">
         <div className="text-primary font-bold">Contact Us</div>
         <div className="text-text">
           <p className="mt-4">
