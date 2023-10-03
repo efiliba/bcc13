@@ -1,5 +1,4 @@
 export * from './MainBanner';
-export * from './LearnMoreOptions';
 export * from './LiveAtHome';
 export * from './News';
 export * from './Paragraphs';

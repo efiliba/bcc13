@@ -5,7 +5,11 @@ import { tiles, services, learnMoreOptions, stages, supportPackages, testimonial
 const Home = () =>
   <main>
     <MainBanner
-      image="/images/aged-care-at-home.png"
+      image="/images/aged-care-at-home.avif"
+      srcSets={[
+        { srcSet: "/images/aged-care-at-home.avif", type: "image/avif" },
+        { srcSet: "/images/aged-care-at-home.png", type: "image/png" }
+      ]}
       title="Quality In-Home Care"
       description="Best Choice Care: Providing Healthcare in Sydney, Australia. Live in your own home, on your own terms."
       action="Learn More"

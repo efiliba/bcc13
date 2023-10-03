@@ -3,7 +3,6 @@
 import { useState, useEffect, ReactNode } from 'react';
 import { usePathname } from 'next/navigation';
 import Link from 'next/link';
-import Image from 'next/image';
 
 import { Envelope, FaceBook, Location } from '@/components/icons';
 
@@ -48,13 +47,15 @@ export const Header = () => {
       <HeaderStrip />
       <div className="bg-white">
         <div className="max-w-screen-xl mx-auto px-3 py-4 grid grid-cols-[194px_1fr_min-content]">
-          <Link className="relative h-20" href="/" passHref>
-            <Image
-              src="/images/best-choice-care.png"
-              alt="Best Choice Care"
-              fill
-              priority
-            />
+          <Link href="/" passHref>
+            <picture>
+              <source srcSet="/images/best-choice-care.png, /images/best-choice-care-2x.png 2x" type="image/png" />
+              <img
+                src="/images/best-choice-care.png"
+                alt="Best Choice Care Logo"
+                fetchPriority="high"
+              />
+            </picture>
           </Link>
           <button
             type="button"

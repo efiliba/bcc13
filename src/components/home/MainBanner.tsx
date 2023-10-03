@@ -1,18 +1,31 @@
-import Image from 'next/image';
 import Link from 'next/link';
 
 import { Button } from '@/components';
 
 interface Props {
   image: string;
+  srcSets: {
+    srcSet: string;
+    type: string;
+  }[];
   title: string;
   description: string;
   action: string;
 }
 
-export const MainBanner = ({ image, title, description, action }: Props) =>
+export const MainBanner = ({ image, srcSets, title, description, action }: Props) =>
   <div className="relative min-h-[700px] grid items-center justify-items-center">
-    <Image className="object-cover" fill src={image} alt={description} priority />
+    <picture className="absolute inset-0">
+      {srcSets.map(({ srcSet, type }, index) =>
+        <source key={index} srcSet={srcSet} type={type} />
+      )}
+      <img
+        className="object-cover w-full h-full"
+        src={image}
+        alt={description}
+        fetchPriority="high"
+      />
+    </picture>
     <div className="absolute text-text text-center md:text-left px-3 w-full max-w-screen-xl mx-auto">
       <h1 className="text-6xl">{title}</h1>
       <h2 className="m-auto md:ml-0 mt-4 text-xl max-w-[550px]">{description}</h2>
