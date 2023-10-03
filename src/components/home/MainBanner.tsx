@@ -22,7 +22,7 @@ export const MainBanner = ({ image, srcSets, title, description, action }: Props
       <img
         className="object-cover w-full h-full"
         src={image}
-        alt={description}
+        alt=""
         fetchPriority="high"
       />
     </picture>

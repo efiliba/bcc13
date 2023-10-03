@@ -20,7 +20,7 @@ const IconText = ({ icon, text }: IconTextProps) =>
   </div>;
 
 const HeaderStrip = () =>
-  <div className="max-w-screen-xl mx-auto p-3 grid grid-cols-[max-content_max-content_1fr] gap-x-5">
+  <div className="max-w-screen-xl mx-auto h-11 p-3 grid grid-cols-[max-content_max-content_1fr] gap-x-5">
     <IconText icon={<Envelope />} text="admin@bestchoicecare.com.au" />
     <IconText icon={<Location />} text="Location, NSW" />
     <a className="hidden sm:grid grid-cols-[max-content_max-content] justify-self-end" target="_blank" href="https://www.facebook.com/bestchoicecare.com.au" rel="noopener noreferrer">
@@ -46,7 +46,7 @@ export const Header = () => {
     <header>
       <HeaderStrip />
       <div className="bg-white">
-        <div className="max-w-screen-xl mx-auto px-3 py-4 grid grid-cols-[194px_1fr_min-content]">
+        <div className="max-w-screen-xl h-28 mx-auto px-3 py-4 grid grid-cols-[194px_1fr_min-content]">
           <Link href="/" passHref>
             <picture>
               <source srcSet="/images/best-choice-care.png, /images/best-choice-care-2x.png 2x" type="image/png" />
