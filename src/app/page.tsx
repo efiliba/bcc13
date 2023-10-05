@@ -1,4 +1,4 @@
-import { MainBanner, TheBest, Why, Services, ProcessStages, LiveAtHome, SupportPackages, Testimonials } from '@/components';
+import { MainBanner, TheBest, Why, Services, ProcessStages, LiveAtHome, SupportPackages, Testimonials, ContactForm } from '@/components';
 // import { ServicesNavBar, LearnMoreOptions } from '@/components';
 import { tiles, services, learnMoreOptions, stages, supportPackages, testimonials } from '@/services';
 
@@ -14,6 +14,8 @@ const Home = () =>
       description="Best Choice Care: Providing Healthcare in Sydney, Australia. Live in your own home, on your own terms."
       action="Learn More"
     />
+    <ContactForm />
+
     {/* <ServicesNavBar /> */}
     <TheBest />
     <Why tiles={tiles} />
