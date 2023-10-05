@@ -26,7 +26,7 @@ const Tile = ({ stage, icon, heading }: TileProps) =>
 export const ProcessStages = ({ stages }: Props) =>
   <Container contentClassName="text-center grid sm:grid-cols-2 md:grid-cols-6 gap-8">
     <h1 className="font-bold text-2xl md:text-4xl col-span-full mb-4 md:mb-16">
-      How to start your home care services
+      How do you get started with our services?
     </h1>
     {stages.map(({ stage, icon, heading }) =>
       <Tile key={stage} stage={stage} icon={icon} heading={heading} />

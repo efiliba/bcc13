@@ -5,12 +5,10 @@ import { Container, SplitImageContent } from '@/components';
 export const LiveAtHome = () =>
   <Container className="relative bg-primary">
     <SplitImageContent className="text-text" image="elderly-care.png">
-      <h1 className="font-bold text-2xl md:text-4xl pb-5">Live in your own home, on your own&nbsp;terms</h1>
+      <h1 className="font-bold text-2xl md:text-4xl pb-5">Already have an NDIS plan?</h1>
       <p>
-        Best Choice Care is simply not like other agencies. Here the power is always given to you, the client. Your
-        needs and your family&apos;s wishes will always come first and we will do everything in our power to customise our
-        services in a way that allows you to live life while being granted the freedom, safety and hassle-free care
-        that you deserve.
+        Fantastic! Reach out to us directly and we can organise services immediately. If you have a support
+        coordinator, we're happy to speak with them on your behalf. Get started here or call 1300 711 380.
       </p>
     </SplitImageContent>
     <Image

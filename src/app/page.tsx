@@ -5,24 +5,24 @@ import { tiles, services, learnMoreOptions, stages, supportPackages, testimonial
 const Home = () =>
   <main>
     <MainBanner
-      image="/images/aged-care-at-home.avif"
+      image="/images/aged-care-at-home.png"
       srcSets={[
-        { srcSet: "/images/aged-care-at-home.avif", type: "image/avif" },
+        // { srcSet: "/images/aged-care-at-home.avif", type: "image/avif" },
         { srcSet: "/images/aged-care-at-home.png", type: "image/png" }
       ]}
-      title="Quality In-Home Care"
+      title="THE BEST CHOICE FOR YOUR NDIS SUPPORTS"
       description="Best Choice Care: Providing Healthcare in Sydney, Australia. Live in your own home, on your own terms."
       action="Learn More"
     />
     {/* <ServicesNavBar /> */}
     <TheBest />
     <Why tiles={tiles} />
+    <Testimonials testimonials={testimonials} />
     {/* <LearnMoreOptions options={learnMoreOptions} /> */}
-    <Services services={services} />
+    {/* <Services services={services} /> */}
     <ProcessStages stages={stages} />
     <LiveAtHome />
     <SupportPackages packages={supportPackages} />
-    <Testimonials testimonials={testimonials} />
   </main>;
   
 export default Home;
