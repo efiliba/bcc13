@@ -15,24 +15,24 @@ export const TheBest = () =>
         🌟 At Best Choice Care, every client is VIP – including YOU!
       </p>
       <p className="mt-4">
-        We're here to offer tailored support with a touch of zest. Think of us as your dedicated partners, helping you
+        We&apos;re here to offer tailored support with a touch of zest. Think of us as your dedicated partners, helping you
         thrive comfortably in your own environment.
       </p>
       <p className="mt-4">
-        🚀 Modern healthcare is great, but don't you think it sometimes misses that heartwarming touch? That’s where we
-        come in! Our support workers aren’t just pros at their jobs; they're also handpicked for their big hearts.
+        🚀 Modern healthcare is great, but don&apos;t you think it sometimes misses that heartwarming touch? That’s where we
+        come in! Our support workers aren’t just pros at their jobs; they&apos;re also handpicked for their big hearts.
         They’re trained not just to support but to uplift!
       </p>
       <p className="mt-4">
-        🌈 Since 2017, we’ve been spreading smiles and making waves as one of Sydney’s most trusted home care providers.
+        🌈 Since 2017, we&apos;ve been spreading smiles and making waves as one of Sydney&apos;s most trusted home care providers.
         Together, we celebrate your strength and resilience.
       </p>
       <p className="mt-4">
         🤝 From helping our amazing participants with high intensity supports, personal care, community fun, or just
-        lending a hand at home, we're your all-in-one support team!
+        lending a hand at home, we&apos;re your all-in-one support team!
       </p>
       <p className="mt-4">
-        📞 Give us a call today! Got questions? Shoot! We're all ears (and a whole lot of heart). 1300 711 380
+        📞 Give us a call today! Got questions? Shoot! We&apos;re all ears (and a whole lot of heart). 1300 711 380
       </p>
       <h4 className="mt-8 font-bold text-xl uppercase">Get a free consultation today!</h4>
       <Link href="tel:1300 711 380" passHref>
