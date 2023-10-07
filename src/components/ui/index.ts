@@ -16,6 +16,7 @@ export * from './PreTitleDescription';
 // export * from './ServicesNavBar';
 export * from './SplitContent';
 export * from './SplitImageContent';
+export * from './Textarea';
 // export * from './Table';
 // export * from './TableWithHeader';
 export * from './Tile';

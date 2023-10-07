@@ -1,3 +1,4 @@
+export * from './ContactForm';
 export * from './MainBanner';
 export * from './LiveAtHome';
 export * from './News';
