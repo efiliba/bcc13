@@ -3,6 +3,7 @@
 import { zodResolver } from '@hookform/resolvers/zod';
 import * as z from 'zod';
 import { useForm } from 'react-hook-form';
+import emailjs from '@emailjs/browser';
 
 import { Container } from '@/components/ui/Container';
 import { Button } from '@/components/ui/Button';
@@ -106,8 +107,9 @@ export const ContactForm = () => {
     },
   });
 
-  const onSubmit = (values: z.infer<typeof formSchema>) => {
-    console.log(values);
+  const onSubmit = async (values: z.infer<typeof formSchema>) => {
+    const result = await emailjs.send('service_er7m3ar', 'template_tbd8h7l', values, '1yJlO2yMxurWfOKNT');
+    console.log(result);
   };
 
   return (
