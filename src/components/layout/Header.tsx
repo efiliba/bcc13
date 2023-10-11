@@ -4,28 +4,30 @@ import { useState, useEffect, ReactNode } from 'react';
 import { usePathname } from 'next/navigation';
 import Link from 'next/link';
 
+import { cn } from '@/lib/utils';
 import { Container } from '@/components/ui/Container';
 import { Envelope, Location, FaceBook, Instagram } from '@/components/icons';
 
 import { navigationLinks } from '@/services';
 
 interface IconTextProps {
+  className?: string;
   icon: ReactNode;
   text: string;
 }
 
-const IconText = ({ icon, text }: IconTextProps) =>
-  <div className="grid grid-cols-[max-content_max-content]">
+const IconText = ({ className, icon, text }: IconTextProps) =>
+  <div className={cn('grid grid-cols-[max-content_max-content]', className)}>
     {icon}
     <div className="text-sm text-text">{text}</div>
   </div>;
 
 const HeaderStrip = () =>
-  <Container className="bg-primary py-2 md:py-2" contentClassName="grid sm:grid-cols-[max-content_max-content_max-content_1fr] gap-x-5 gap-y-2">
+  <Container className="bg-primary py-2 md:py-2" contentClassName="grid grid-cols-[max-content_max-content_max-content_1fr] gap-x-5 gap-y-2">
     <IconText icon={<Envelope />} text="admin@bestchoicecare.com.au" />
-    <IconText icon={<Location />} text="Sydney, NSW" />
-    <IconText icon={<Location />} text="Canberra, ACT" />
-    <div className="hidden sm:grid grid-cols-[max-content_max-content_max-content] justify-self-end gap-x-2">
+    <IconText className="hidden sm:grid" icon={<Location />} text="Sydney, NSW" />
+    <IconText className="hidden sm:grid" icon={<Location />} text="Canberra, ACT" />
+    <div className="grid grid-cols-[max-content_max-content_max-content] justify-self-end gap-x-2">
       <div className="text-sm text-text">Follow Us</div>
       <a target="_blank" href="https://www.facebook.com/bestchoicecare.com.au" rel="noopener noreferrer">
         <FaceBook />

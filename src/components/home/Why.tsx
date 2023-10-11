@@ -6,7 +6,7 @@ interface Props {
 
 export const Why = ({ tiles }: Props) =>
   <Container className="bg-gray-100" contentClassName="text-center">
-    <h1 className="font-bold text-2xl md:text-4xl">Why Swing Over to Best Choice Care for Disability Support?</h1>
+    <h1 className="font-bold text-2xl md:text-4xl">Benefits of Holistic Complex Care and Support at Home?</h1>
     <h4 className="mt-8 font-bold text-xl">
       In-Home Care Offers A Dignifying, Reliable, And Comfortable Care Experience
     </h4>

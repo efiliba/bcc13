@@ -5,12 +5,12 @@ import { tiles, services, learnMoreOptions, stages, supportPackages, testimonial
 const Home = () =>
   <main>
     <MainBanner
-      image="/images/aged-care-at-home.png"
+      image="/images/aged-care-at-home.jpg"
       srcSets={[
         // { srcSet: "/images/aged-care-at-home.avif", type: "image/avif" },
-        { srcSet: "/images/aged-care-at-home.png", type: "image/png" }
+        { srcSet: "/images/aged-care-at-home.jpg", type: "image/png" }
       ]}
-      title="THE BEST CHOICE FOR YOUR NDIS SUPPORTS"
+      title="Holistic Complex Care Support"
       description="Best Choice Care: Providing Healthcare in Australia. Live in your own home, on your own terms."
       action="Learn More"
     />

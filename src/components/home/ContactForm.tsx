@@ -83,7 +83,7 @@ interface ControlOptionProps {
 const ControlOptions = ({ options, placeholder, name, onChange }: ControlOptionProps) =>
   options
     ? <Select onValueChange={onChange}>
-        <SelectTrigger>
+        <SelectTrigger className="bg-white">
           <SelectValue placeholder={placeholder} />
         </SelectTrigger>
         <SelectContent>
@@ -118,7 +118,7 @@ export const ContactForm = () => {
       <SplitImageContent  imageFirst image="elderly-care.png" contentClassName="bg-primary p-6 rounded">
         <h2 className="font-bold text-xl md:text-3xl pb-4 text-center">Get Started with a Free Caring Consult</h2>
         <Form {...form}>
-          <form onSubmit={form.handleSubmit(onSubmit)} className="grid md:grid-cols-2 gap-4">
+          <form onSubmit={form.handleSubmit(onSubmit)} className="grid gap-y-4">
             <div className="space-y-4">
               {fields.map(({ name, placeholder, lable, description, options }, index) =>
                 <FormField
@@ -136,7 +136,7 @@ export const ContactForm = () => {
                           onChange={field.onChange}
                         />
                       </FormControl>
-                      <FormDescription>{description}</FormDescription>
+                      <FormDescription className="text-secondary">{description}</FormDescription>
                       <FormMessage />
                     </FormItem>
                   }
@@ -151,7 +151,7 @@ export const ContactForm = () => {
                   <FormLabel>How can we help you with your care?</FormLabel>
                   <FormControl>
                     <Textarea
-                      className="min-h-[20rem]"
+                      className="bg-white min-h-[20rem]"
                       placeholder="Feel free to ask any questions or concerns you may have."
                       onChange={field.onChange}
                     />
@@ -160,11 +160,11 @@ export const ContactForm = () => {
                 </FormItem>
               }
             />
-            <p className="md:col-span-2">
+            <p>
               By clicking on submit, you approve that the information you entered will be transmitted via email, and
               understand that information provided should not be considered medical advice or treatment.
             </p>
-            <Button className="justify-self-start" type="submit">Submit</Button>
+            <Button className="justify-self-end" variant="secondary" size="lg" type="submit">Submit</Button>
           </form>
         </Form>
       </SplitImageContent>
