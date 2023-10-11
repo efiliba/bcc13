@@ -14,6 +14,9 @@ module.exports = {
         "2xl": "1400px",
       },
     },
+    fontFamily: {
+      sans: ["-apple-system", "BlinkMacSystemFont", "'Segoe UI'", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "'Fira Sans'", "'Droid Sans'", "'Helvetica Neue'", "sans-serif"],
+    },
     extend: {
       colors: {
         black: "#2f3232",

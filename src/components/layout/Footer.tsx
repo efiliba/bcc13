@@ -25,11 +25,9 @@ export const Footer = () =>
       <div className="grid-in-[contact] md:justify-self-end">
         <div className="text-primary font-bold">Contact Us</div>
         <div className="text-text">
-          <p className="mt-4">
-            105 / 845 Pacific Highway<br />
-            Chatswood<br />
-            NSW 2067
-          </p>
+          <p className="mt-4 font-bold">Locations:</p>
+          <p>Sydney, NSW</p>
+          <p>Canberra, ACT</p>
           <p className="mt-4">1300 711 380</p>
           <p className="mt-4">admin@bestchoicecare.com.au</p>
         </div>

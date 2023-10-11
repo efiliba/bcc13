@@ -11,7 +11,7 @@ const Home = () =>
         { srcSet: "/images/aged-care-at-home.png", type: "image/png" }
       ]}
       title="THE BEST CHOICE FOR YOUR NDIS SUPPORTS"
-      description="Best Choice Care: Providing Healthcare in Sydney, Australia. Live in your own home, on your own terms."
+      description="Best Choice Care: Providing Healthcare in Australia. Live in your own home, on your own terms."
       action="Learn More"
     />
     {/* <ServicesNavBar /> */}
@@ -22,7 +22,7 @@ const Home = () =>
     {/* <Services services={services} /> */}
     <ProcessStages stages={stages} />
     <LiveAtHome />
-    <SupportPackages packages={supportPackages} />
+    {/* <SupportPackages packages={supportPackages} /> */}
     <ContactForm />
   </main>;
   

@@ -5,6 +5,7 @@ import * as z from 'zod';
 import { useForm } from 'react-hook-form';
 import emailjs from '@emailjs/browser';
 
+import { SplitImageContent } from '@/components/ui/SplitImageContent';
 import { Container } from '@/components/ui/Container';
 import { Button } from '@/components/ui/Button';
 import { Input } from '@/components/ui/Input';
@@ -13,7 +14,7 @@ import { Form, FormControl, FormDescription, FormField, FormItem, FormLabel, For
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/Select";
 
 const bestTime = ['Anytime', 'Morning', 'Afternoon', 'Evening'] as const;
-const hearAboutUs = ['Google Search', 'Friend/Word of Mouth', 'Professional Referral (Doctor)', 'Social Media', 'TV', 'Radio', 'Nurse Next Door Car', 'Brochure', 'Facility', 'Other'] as const;
+const hearAboutUs = ['Google Search', 'Friend/Word of Mouth', 'Professional Referral (Doctor)', 'Social Media', 'TV', 'Radio', 'Hospital', 'Brochure', 'Facility', 'Other'] as const;
 const funding = ['NDIS', 'Private', 'Other'] as const;
 
 const fields = [{
@@ -114,57 +115,59 @@ export const ContactForm = () => {
 
   return (
     <Container>
-      <h2 className="font-bold text-xl md:text-3xl pb-4 text-center">Get Started with a Free Caring Consult</h2>
-      <Form {...form}>
-        <form onSubmit={form.handleSubmit(onSubmit)} className="grid md:grid-cols-2 gap-4">
-          <div className="space-y-4">
-            {fields.map(({ name, placeholder, lable, description, options }, index) =>
-              <FormField
-                key={index}
-                control={form.control}
-                name={name}
-                render={({ field }) =>
-                  <FormItem>
-                    <FormLabel>{lable}</FormLabel>
-                    <FormControl>
-                      <ControlOptions
-                        options={options}
-                        placeholder={placeholder}
-                        name={name}
-                        onChange={field.onChange}
-                      />
-                    </FormControl>
-                    <FormDescription>{description}</FormDescription>
-                    <FormMessage />
-                  </FormItem>
-                }
-              />
-            )}
-          </div>
-          <FormField
-            control={form.control}
-            name="question"
-            render={({ field }) =>
-              <FormItem>
-                <FormLabel>How can we help you with your care?</FormLabel>
-                <FormControl>
-                  <Textarea
-                    className="min-h-[20rem]"
-                    placeholder="Feel free to ask any questions or concerns you may have."
-                    onChange={field.onChange}
-                  />
-                </FormControl>
-                <FormMessage />
-              </FormItem>
-            }
-          />
-          <p className="md:col-span-2">
-            By clicking on submit, you approve that the information you entered will be transmitted via email, and
-            understand that information provided should not be considered medical advice or treatment.
-          </p>
-          <Button className="justify-self-start" type="submit">Submit</Button>
-        </form>
-      </Form>
+      <SplitImageContent  imageFirst image="elderly-care.png" contentClassName="bg-primary p-6 rounded">
+        <h2 className="font-bold text-xl md:text-3xl pb-4 text-center">Get Started with a Free Caring Consult</h2>
+        <Form {...form}>
+          <form onSubmit={form.handleSubmit(onSubmit)} className="grid md:grid-cols-2 gap-4">
+            <div className="space-y-4">
+              {fields.map(({ name, placeholder, lable, description, options }, index) =>
+                <FormField
+                  key={index}
+                  control={form.control}
+                  name={name}
+                  render={({ field }) =>
+                    <FormItem>
+                      <FormLabel>{lable}</FormLabel>
+                      <FormControl>
+                        <ControlOptions
+                          options={options}
+                          placeholder={placeholder}
+                          name={name}
+                          onChange={field.onChange}
+                        />
+                      </FormControl>
+                      <FormDescription>{description}</FormDescription>
+                      <FormMessage />
+                    </FormItem>
+                  }
+                />
+              )}
+            </div>
+            <FormField
+              control={form.control}
+              name="question"
+              render={({ field }) =>
+                <FormItem>
+                  <FormLabel>How can we help you with your care?</FormLabel>
+                  <FormControl>
+                    <Textarea
+                      className="min-h-[20rem]"
+                      placeholder="Feel free to ask any questions or concerns you may have."
+                      onChange={field.onChange}
+                    />
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              }
+            />
+            <p className="md:col-span-2">
+              By clicking on submit, you approve that the information you entered will be transmitted via email, and
+              understand that information provided should not be considered medical advice or treatment.
+            </p>
+            <Button className="justify-self-start" type="submit">Submit</Button>
+          </form>
+        </Form>
+      </SplitImageContent>
     </Container>
   );
 };

@@ -10,8 +10,8 @@ const AgedCare = () =>
   <>
     <Paralax
       className="bg-aged-care"
-      title="IN-HOME AGED CARE"
-      description="If you are looking for in-home aged care services please complete the form below."
+      title="IN-HOME CARE"
+      description="If you are looking for in-home care services please complete the form below."
       action="SERVICE REQUEST FORM"
       onClick={handleClick}
     />
