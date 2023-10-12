@@ -7,7 +7,7 @@ export const TheBest = () =>
     <SplitImageContent image="best-care.png" imageFirst>
       <h1 className="font-bold text-2xl md:text-4xl">Experience Holistic Support with Our High-Intensity NDIS Services</h1>
       <p className="mt-4">
-        At Best Choice Care, we pride ourselves on delivering exceptional high-intensity NDIS services that redefine post-hospital care. By collaborating closely with our esteemed partner a Highly Experienced Nurse Practitioner & Clinical Director, we've pioneered a seamless transition process for participants. Starting from hospital discharge, we meticulously orchestrate the transition into the comfort of the participant's home. But that's just the beginning.
+        At Best Choice Care, we pride ourselves on delivering exceptional high-intensity NDIS services that redefine post-hospital care. By collaborating closely with our esteemed partner a Highly Experienced Nurse Practitioner & Clinical Director, we&apos;ve pioneered a seamless transition process for participants. Starting from hospital discharge, we meticulously orchestrate the transition into the comfort of the participant&apos;s home. But that&apos;s just the beginning.
       </p>
       <p className="mt-4">
         To ensure continued support and care, we then handpick and train an elite team of support workers according to your specific care needs. Our dedicated teams are not just trained in essential care techniques but also instilled with a philosophy of holistic support.
