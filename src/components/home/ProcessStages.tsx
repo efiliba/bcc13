@@ -19,7 +19,7 @@ const Tile = ({ stage, icon, heading }: TileProps) =>
     </div>
     <CardHeader className="grid grid-cols-[53px_1fr] gap-x-4 items-center">
       <Image className="h-[41px]" width={53} height={41} src={`/icons/${icon}.svg`} alt="icon" />
-      <h4 className="text-base">{heading}</h4>
+      <div className="text-base">{heading}</div>
     </CardHeader>
   </Card>;
 

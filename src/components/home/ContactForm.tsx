@@ -83,7 +83,7 @@ interface ControlOptionProps {
 const ControlOptions = ({ options, placeholder, name, onChange }: ControlOptionProps) =>
   options
     ? <Select onValueChange={onChange}>
-        <SelectTrigger className="bg-white">
+        <SelectTrigger className="bg-white" aria-label={name}>
           <SelectValue placeholder={placeholder} />
         </SelectTrigger>
         <SelectContent>

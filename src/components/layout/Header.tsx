@@ -29,10 +29,20 @@ const HeaderStrip = () =>
     <IconText className="hidden sm:grid" icon={<Location />} text="Canberra, ACT" />
     <div className="grid grid-cols-[max-content_max-content_max-content] justify-self-end gap-x-2">
       <div className="text-sm text-text">Follow Us</div>
-      <a target="_blank" href="https://www.facebook.com/bestchoicecare.com.au" rel="noopener noreferrer">
+      <a
+        target="_blank"
+        href="https://www.facebook.com/bestchoicecare.com.au"
+        rel="noopener noreferrer"
+        aria-label="Our Facebook page"
+      >
         <FaceBook />
       </a>
-      <a target="_blank" href="https://www.instagram.com/best_choice_care" rel="noopener noreferrer">
+      <a
+        target="_blank"
+        href="https://www.instagram.com/best_choice_care"
+        rel="noopener noreferrer"
+        aria-label="Our Instagram page"
+      >
         <Instagram />
       </a>
     </div>
@@ -54,13 +64,15 @@ export const Header = () => {
   return (
     <header>
       <HeaderStrip />
-      <Container className="h-28 py-4 md:py-4" contentClassName="grid grid-cols-[194px_1fr_min-content] items-center">
+      <Container className="h-28 py-4 md:py-4" contentClassName="h-full grid grid-cols-[194px_1fr_min-content] items-center">
         <Link href="/" passHref>
           <picture>
             <source srcSet="/images/best-choice-care.png, /images/best-choice-care-2x.png 2x" type="image/png" />
             <img
               src="/images/best-choice-care.png"
               alt="Best Choice Care Logo"
+              width={194}
+              height={80}
               fetchPriority="high"
             />
           </picture>
