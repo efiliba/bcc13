@@ -27,10 +27,12 @@ export const MainBanner = ({ image, srcSets, title, description, action }: Props
       />
     </picture>
     <div className="absolute text-text text-center md:text-left px-3 w-full max-w-screen-xl mx-auto">
-      <h1 className="text-6xl text-stroke">{title}</h1>
-      <h2 className="m-auto md:ml-0 mt-4 text-xl max-w-[550px] text-stroke">{description}</h2>
-      <Link href="/in-home-aged-care" passHref>
-        <Button className="mt-12 uppercase" size="lg">{action}</Button>
-      </Link>
+      <div className="glass">
+        <h1 className="text-6xl">{title}</h1>
+        <h2 className="m-auto md:ml-0 mt-4 text-xl max-w-[550px]">{description}</h2>
+        <Link href="/in-home-aged-care" passHref>
+          <Button className="mt-12 uppercase" size="lg">{action}</Button>
+        </Link>
+      </div>
     </div>
   </div>;
