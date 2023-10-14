@@ -7,7 +7,7 @@ const Home = () =>
     <MainBanner
       image="/images/aged-care-at-home.jpg"
       srcSets={[
-        // { srcSet: "/images/aged-care-at-home.avif", type: "image/avif" },
+        { srcSet: "/images/aged-care-at-home.avif", type: "image/avif" },
         { srcSet: "/images/aged-care-at-home.jpg", type: "image/png" }
       ]}
       title="Holistic Complex Care Support"
