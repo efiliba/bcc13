@@ -1,5 +1,6 @@
 "use client";
 
+import { useState } from 'react';
 import { zodResolver } from '@hookform/resolvers/zod';
 import * as z from 'zod';
 import { useForm } from 'react-hook-form';
@@ -12,6 +13,8 @@ import { Input } from '@/components/ui/Input';
 import { Textarea } from '@/components/ui/Textarea';
 import { Form, FormControl, FormDescription, FormField, FormItem, FormLabel, FormMessage } from '@/components/ui/Form';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/Select";
+import { RequestSent } from './RequestSent';
+import { RequestError } from './RequestError';
 
 const bestTime = ['Anytime', 'Morning', 'Afternoon', 'Evening'] as const;
 const hearAboutUs = ['Google Search', 'Friend/Word of Mouth', 'Professional Referral (Doctor)', 'Social Media', 'TV', 'Radio', 'Hospital', 'Brochure', 'Facility', 'Other'] as const;
@@ -58,8 +61,7 @@ const fields = [{
 const formSchema = z.object({
   name: z.string()
     .trim()
-    .min(1, { message: 'Name is required' })
-    .min(2, { message: 'Name must be at least 2 characters' }),
+    .min(1, { message: 'Name is required' }),
   phone: z.string(),
   bestTime: z.enum(bestTime),
   hearAboutUs: z.enum(hearAboutUs),
@@ -95,6 +97,9 @@ const ControlOptions = ({ options, placeholder, name, onChange }: ControlOptionP
     : <Input className="bg-white" placeholder={placeholder} name={name} onChange={onChange} />;
 
 export const ContactForm = () => {
+  const [openRequestSent, setOpenRequestSent] = useState(false);
+  const [openRequestError, setOpenRequestError] = useState(false);
+
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
@@ -109,9 +114,19 @@ export const ContactForm = () => {
   });
 
   const onSubmit = async (values: z.infer<typeof formSchema>) => {
-    const result = await emailjs.send('service_er7m3ar', 'template_tbd8h7l', values, '1yJlO2yMxurWfOKNT');
-    console.log(result);
+    try {
+      await emailjs.send('service_er7m3ar', 'template_tbd8h7l', values, '1yJlO2yMxurWfOKNT');
+      form.reset(); // NOT WORKING
+      // NEED LOADING SPINNERS
+      setOpenRequestSent(true);
+    } catch {
+      setOpenRequestError(true);
+    }
   };
+
+  const handleCloseRequestSent = () => setOpenRequestSent(false);
+
+  const handleCloseRequestError = () => setOpenRequestError(false);
 
   return (
     <Container>
@@ -168,6 +183,8 @@ export const ContactForm = () => {
           </form>
         </Form>
       </SplitImageContent>
+      <RequestSent open={openRequestSent} onClose={handleCloseRequestSent} />
+      <RequestError open={openRequestError} onClose={handleCloseRequestError} />
     </Container>
   );
 };

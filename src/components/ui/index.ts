@@ -3,6 +3,7 @@ export * from './Banner';
 export * from './Book';
 export * from './BulletList';
 export * from './Card';
+export * from './Dialog';
 export * from './Form';
 // export * from './Carousel';
 export * from './GoogleMaps';
