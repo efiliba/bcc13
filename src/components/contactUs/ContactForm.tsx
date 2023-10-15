@@ -34,11 +34,13 @@ const fields = [{
   name: 'bestTime' as const,
   placeholder: 'Select the best time for us to contact you',
   lable: 'Best time to be reached',
+  control: 'option' as const,
   options: bestTime
 }, {
   name: 'hearAboutUs' as const,
   placeholder: 'Please let us know how you heard about us',
   lable: 'How did you hear about us?',
+  control: 'option' as const,
   options: hearAboutUs
 }, {
   name: 'email' as const,
@@ -55,7 +57,13 @@ const fields = [{
   placeholder: 'Please select the funding type',
   lable: 'Funding',
   description: 'NDIS or private funding',
+  control: 'option' as const,
   options: funding
+}, {
+  name: 'question' as const,
+  placeholder: 'Feel free to ask any questions or concerns you may have.',
+  lable: 'How can we help you with your care?',
+  control: 'textarea' as const
 }];
 
 const formSchema = z.object({
@@ -76,51 +84,71 @@ const formSchema = z.object({
 });
 
 interface ControlOptionProps {
+  control?: 'option' | 'textarea';
   options?: typeof bestTime | typeof hearAboutUs | typeof funding;
+  value: string;
   placeholder: string;
   name: string;
   onChange: (...event: any[]) => void;
 }
 
-const ControlOptions = ({ options, placeholder, name, onChange }: ControlOptionProps) =>
-  options
-    ? <Select onValueChange={onChange}>
+const ControlOptions = ({ control, options, value, placeholder, name, onChange }: ControlOptionProps) => {
+  switch (control) {
+    case 'option': return (
+      <Select value={value} onValueChange={onChange}>
         <SelectTrigger className="bg-white" aria-label={name}>
-          <SelectValue placeholder={placeholder} />
+          {value ? <SelectValue placeholder={placeholder} /> : placeholder}
         </SelectTrigger>
         <SelectContent>
-          {options.map((option, key) =>
+          {options?.map((option, key) =>
             <SelectItem key={key} value={option}>{option}</SelectItem>
           )}
         </SelectContent>
       </Select>
-    : <Input className="bg-white" placeholder={placeholder} name={name} onChange={onChange} />;
+    );
+    case 'textarea': return (
+      <Textarea
+        className="bg-white min-h-[20rem]"
+        value={value}
+        placeholder={placeholder}
+        onChange={onChange}
+      />
+    );
+    default: return (
+      <Input className="bg-white" value={value} placeholder={placeholder} name={name} onChange={onChange} />
+    );
+  }
+};
 
 export const ContactForm = () => {
+  const [sendRequest, setSendRequest] = useState(false);
   const [openRequestSent, setOpenRequestSent] = useState(false);
   const [openRequestError, setOpenRequestError] = useState(false);
 
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
-      name: undefined,
-      phone: undefined,
+      name: '',
+      phone: '',
       bestTime: undefined,
       hearAboutUs: undefined,
-      email: undefined,
-      postcode: undefined,
-      funding: undefined
+      email: '',
+      postcode: '',
+      funding: undefined,
+      question: ''
     },
   });
 
   const onSubmit = async (values: z.infer<typeof formSchema>) => {
     try {
+      setSendRequest(true);
       await emailjs.send('service_er7m3ar', 'template_tbd8h7l', values, '1yJlO2yMxurWfOKNT');
-      form.reset(); // NOT WORKING
-      // NEED LOADING SPINNERS
+      form.reset();
       setOpenRequestSent(true);
     } catch {
       setOpenRequestError(true);
+    } finally {
+      setSendRequest(false);
     }
   };
 
@@ -133,53 +161,44 @@ export const ContactForm = () => {
       <SplitImageContent imageFirst image="elderly-care.png" contentClassName="bg-primary p-6 rounded">
         <h2 className="font-bold text-xl md:text-3xl pb-4 text-center">Get Started with a Free Caring Consult</h2>
         <Form {...form}>
-          <form onSubmit={form.handleSubmit(onSubmit)} className="grid gap-y-4">
-            <div className="space-y-4">
-              {fields.map(({ name, placeholder, lable, description, options }, index) =>
-                <FormField
-                  key={index}
-                  control={form.control}
-                  name={name}
-                  render={({ field }) =>
-                    <FormItem>
-                      <FormLabel>{lable}</FormLabel>
-                      <FormControl>
-                        <ControlOptions
-                          options={options}
-                          placeholder={placeholder}
-                          name={name}
-                          onChange={field.onChange}
-                        />
-                      </FormControl>
-                      <FormDescription className="text-secondary">{description}</FormDescription>
-                      <FormMessage />
-                    </FormItem>
-                  }
-                />
-              )}
-            </div>
-            <FormField
-              control={form.control}
-              name="question"
-              render={({ field }) =>
-                <FormItem>
-                  <FormLabel>How can we help you with your care?</FormLabel>
-                  <FormControl>
-                    <Textarea
-                      className="bg-white min-h-[20rem]"
-                      placeholder="Feel free to ask any questions or concerns you may have."
-                      onChange={field.onChange}
-                    />
-                  </FormControl>
-                  <FormMessage />
-                </FormItem>
-              }
-            />
+          <form onSubmit={form.handleSubmit(onSubmit)} className="grid gap-y-4 space-y-4">
+            {fields.map(({ name, placeholder, lable, description, control, options }, index) =>
+              <FormField
+                key={index}
+                control={form.control}
+                name={name}
+                render={({ field }) =>
+                  <FormItem>
+                    <FormLabel>{lable}</FormLabel>
+                    <FormControl>
+                      <ControlOptions
+                        control={control}
+                        options={options}
+                        value={field.value}
+                        placeholder={placeholder}
+                        name={name}
+                        onChange={field.onChange}
+                      />
+                    </FormControl>
+                    <FormDescription className="text-secondary">{description}</FormDescription>
+                    <FormMessage />
+                  </FormItem>
+                }
+              />
+            )}
             <p>
               By clicking on submit, you approve that the information you entered will be transmitted via email, and
               understand that information provided should not be considered medical advice or treatment.
             </p>
-            <Button className="justify-self-end" variant="secondary" size="lg" type="submit">Submit</Button>
+            <Button className="justify-self-end" disabled={sendRequest} variant="secondary" size="lg" type="submit">
+              {sendRequest &&
+                <svg className="animate-spin -ml-1 mr-3 h-5 w-5 text-text" fill="none" viewBox="0 0 24 24">
+                  <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" />
+                  <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z" />
+                </svg>
+              }
+              Submit
+            </Button>
           </form>
         </Form>
       </SplitImageContent>
