@@ -16,9 +16,9 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { RequestSent } from './RequestSent';
 import { RequestError } from './RequestError';
 
-const bestTime = ['Anytime', 'Morning', 'Afternoon', 'Evening'] as const;
-const hearAboutUs = ['Google Search', 'Friend/Word of Mouth', 'Professional Referral (Doctor)', 'Social Media', 'TV', 'Radio', 'Hospital', 'Brochure', 'Facility', 'Other'] as const;
-const funding = ['NDIS', 'Private', 'Other'] as const;
+const bestTime = ['', 'Anytime', 'Morning', 'Afternoon', 'Evening'] as const;
+const hearAboutUs = ['', 'Google Search', 'Friend/Word of Mouth', 'Professional Referral (Doctor)', 'Social Media', 'TV', 'Radio', 'Hospital', 'Brochure', 'Facility', 'Other'] as const;
+const funding = ['', 'NDIS', 'Private', 'Other'] as const;
 
 const fields = [{
   name: 'name' as const,
@@ -100,7 +100,7 @@ const ControlOptions = ({ control, options, value, placeholder, name, onChange }
           {value ? <SelectValue placeholder={placeholder} /> : placeholder}
         </SelectTrigger>
         <SelectContent>
-          {options?.map((option, key) =>
+          {options?.slice(1).map((option, key) =>
             <SelectItem key={key} value={option}>{option}</SelectItem>
           )}
         </SelectContent>
@@ -130,11 +130,11 @@ export const ContactForm = () => {
     defaultValues: {
       name: '',
       phone: '',
-      bestTime: undefined,
-      hearAboutUs: undefined,
+      bestTime: '',
+      hearAboutUs: '',
       email: '',
       postcode: '',
-      funding: undefined,
+      funding: '',
       question: ''
     },
   });
