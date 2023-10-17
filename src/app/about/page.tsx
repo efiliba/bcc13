@@ -1,4 +1,4 @@
-import { Paralax, OurStory, InspireHope } from '@/components';
+import { Paralax, OurStory, InspireHope, Partners } from '@/components';
 
 const About = () =>
   <>
@@ -9,6 +9,7 @@ const About = () =>
     />
     <OurStory />
     <InspireHope />
+    <Partners />
   </>;
 
 export default About;

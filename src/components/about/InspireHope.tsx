@@ -11,7 +11,7 @@ export const InspireHope = () =>
           "Hence, our goal is to transform professional care into more than just physical care. We focus on the holistic aspect of caring which encompasses social, emotional, psychological and physical support."
         ]}
         action="Learn More"
-        link="/"
+        link="/ndis-disability-support"
       />
     </SplitImageContent>
   </Container>;
