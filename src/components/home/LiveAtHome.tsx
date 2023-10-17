@@ -4,7 +4,7 @@ import { Container, SplitImageContent } from '@/components';
 
 export const LiveAtHome = () =>
   <Container className="relative bg-primary">
-    <SplitImageContent className="text-text" image="elderly-care.png">
+    <SplitImageContent className="text-text" image="ndis-plan.jpg">
       <h1 className="font-bold text-2xl md:text-4xl pb-5">Already have an NDIS plan?</h1>
       <p>
         Fantastic! Reach out to us directly and we can organise services immediately. If you have a support

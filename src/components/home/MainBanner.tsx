@@ -26,10 +26,10 @@ export const MainBanner = ({ image, srcSets, title, description, action }: Props
         fetchPriority="high"
       />
     </picture>
-    <div className="absolute text-text text-center md:text-left px-3 w-full max-w-screen-xl mx-auto">
+    <div className="absolute text-text text-center px-3 w-full max-w-screen-xl mx-auto">
       <div className="glass">
         <h1 className="text-6xl">{title}</h1>
-        <h2 className="m-auto md:ml-0 mt-4 text-xl max-w-[550px]">{description}</h2>
+        <h2 className="m-auto md:ml-0 mt-4 text-xl">{description}</h2>
         <Link href="/in-home-aged-care" passHref>
           <Button className="mt-12 uppercase" size="lg">{action}</Button>
         </Link>

@@ -158,7 +158,7 @@ export const ContactForm = () => {
 
   return (
     <Container>
-      <SplitImageContent imageFirst image="elderly-care.png" contentClassName="bg-primary p-6 rounded">
+      <SplitImageContent imageFirst image="consult.jpg" contentClassName="bg-primary p-6 rounded">
         <h2 className="font-bold text-xl md:text-3xl pb-4 text-center">Get Started with a Free Caring Consult</h2>
         <Form {...form}>
           <form onSubmit={form.handleSubmit(onSubmit)} className="grid gap-y-4 space-y-4">
