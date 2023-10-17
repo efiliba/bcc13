@@ -109,7 +109,7 @@ const ControlOptions = ({ control, options, value, placeholder, name, onChange }
     );
     case 'textarea': return (
       <Textarea
-        className="bg-white min-h-[20rem]"
+        className="bg-white min-h-[10rem]"
         value={value}
         placeholder={placeholder}
         onChange={onChange}
