@@ -39,7 +39,7 @@ const HeaderStrip = () =>
       </a>
       <a
         target="_blank"
-        href="https://www.instagram.com/best_choice_care"
+        href="https://www.instagram.com/bestchoicecare"
         rel="noopener noreferrer"
         aria-label="Our Instagram page"
       >

@@ -11,11 +11,11 @@ export const CommunityParticipation = () =>
             className="text-text"
             preTitleClassName="text-text"
             preTitle="Community Participation"
-            title="Improved Social Connection Aids Healing Of Existing Medical Conditions"
+            title="Improved Social Connection Aids"
             descriptions={[
               "Staying isolated has its negative consequences, as the pandemic has proven. Some degree of social interaction is essential for every person, irrespective of their condition.",
               "When going out and socialising becomes hard, our support workers assist clients in revisiting social spaces with the necessary help required. With this, our goal is to foster relationships and rebuild confidence within our clients in order to improve their quality of life.",
-              "Our support workers help clients by accompaning them to doctor visits and social outings in the community."
+              "Our support workers help clients by accompanying them to doctor visits and social outings in the community."
             ]}
           />,
         rhs:

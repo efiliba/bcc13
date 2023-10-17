@@ -77,11 +77,10 @@ module.exports = {
         "accordion-up": "accordion-up 0.2s ease-out",
       },
       backgroundImage: {
-        services: "url('/images/banner.png')",
         'disability-support': "url('/images/disability-support.jpg')",
         'aged-care': "url('/images/in-home-aged-care.jpg')",
         location: "url('/images/map-background.jpg')",
-        services: "url('/images/aged-care-services.png')",
+        services: "url('/images/services.jpg')",
         about: "url('/images/about-us.jpg')",
         contact: "url('/images/banner.png')",
       },

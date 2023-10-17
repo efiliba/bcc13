@@ -2,7 +2,7 @@ import { Container, SplitImageContent, PreTitleDescription } from '@/components'
 
 export const OurStory = () =>
   <Container>
-    <SplitImageContent image="our-services.jpg" imageFirst>
+    <SplitImageContent image="our-story.jpg" imageFirst>
       <PreTitleDescription
         preTitle="Our Story"
         title="Our Story Is One Filled With Ambition, Passion, And A Drive For Change"

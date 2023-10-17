@@ -3,7 +3,7 @@ import { Paralax, ServicesRange, Nursing, PersonalCare, CommunityParticipation }
 const Services = () =>
   <>
     <Paralax
-      className="bg-services bg-auto"
+      className="bg-services"
       contentClassName="pt-40"
       title="Our Services"
     />
