@@ -143,7 +143,12 @@ export const ContactForm = () => {
   const onSubmit = async (values: z.infer<typeof formSchema>) => {
     try {
       setSendRequest(true);
-      await emailjs.send('service_er7m3ar', 'template_tbd8h7l', values, '1yJlO2yMxurWfOKNT');
+      await emailjs.send(
+        process.env.NEXT_PUBLIC_EMAIL_SERVICE_ID!,
+        process.env.NEXT_PUBLIC_EMAIL_TEMPLATE_ID!,
+        values,
+        process.env.NEXT_PUBLIC_EMAIL_PUBLIC_KEY
+      );
       form.reset();
       setOpenRequestSent(true);
     } catch {
