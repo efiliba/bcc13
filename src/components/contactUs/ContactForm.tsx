@@ -145,7 +145,7 @@ export const ContactForm = () => {
       setSendRequest(true);
       await emailjs.send(
         process.env.NEXT_PUBLIC_EMAIL_SERVICE_ID || '',
-        process.env.NEXT_PUBLIC_EMAIL_TEMPLATE_ID || ''!,
+        process.env.NEXT_PUBLIC_EMAIL_TEMPLATE_ID || '',
         values,
         process.env.NEXT_PUBLIC_EMAIL_PUBLIC_KEY
       );
