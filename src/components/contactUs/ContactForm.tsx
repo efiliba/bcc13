@@ -24,25 +24,26 @@ const fields = [{
   name: 'name' as const,
   placeholder: 'Contact name',
   lable: 'Name',
-  description: 'Please enter your name'
+  description: 'Please enter your name',
+  options: undefined // Needed for TS - as options no longer used
 }, {
   name: 'phone' as const,
   placeholder: 'Enter your contact number',
   lable: 'Contact number',
   description: 'Phone number of primary contact'
 }, {
-  name: 'bestTime' as const,
-  placeholder: 'Select the best time for us to contact you',
-  lable: 'Best time to be reached',
-  control: 'option' as const,
-  options: bestTime
-}, {
-  name: 'hearAboutUs' as const,
-  placeholder: 'Please let us know how you heard about us',
-  lable: 'How did you hear about us?',
-  control: 'option' as const,
-  options: hearAboutUs
-}, {
+//   name: 'bestTime' as const,
+//   placeholder: 'Select the best time for us to contact you',
+//   lable: 'Best time to be reached',
+//   control: 'option' as const,
+//   options: bestTime
+// }, {
+//   name: 'hearAboutUs' as const,
+//   placeholder: 'Please let us know how you heard about us',
+//   lable: 'How did you hear about us?',
+//   control: 'option' as const,
+//   options: hearAboutUs
+// }, {
   name: 'email' as const,
   placeholder: 'Please enter a contact email address',
   lable: 'Email address',
@@ -52,13 +53,13 @@ const fields = [{
   placeholder: 'Please enter a postcode',
   lable: 'Postcode',
   description: 'Postcode where care is needed'
-}, {
-  name: 'funding' as const,
-  placeholder: 'Please select the funding type',
-  lable: 'Funding',
-  description: 'NDIS or private funding',
-  control: 'option' as const,
-  options: funding
+// }, {
+//   name: 'funding' as const,
+//   placeholder: 'Please select the funding type',
+//   lable: 'Funding',
+//   description: 'NDIS or private funding',
+//   control: 'option' as const,
+//   options: funding
 }, {
   name: 'question' as const,
   placeholder: 'Feel free to ask any questions or concerns you may have.',

@@ -30,7 +30,7 @@ export const MainBanner = ({ image, srcSets, title, description, action }: Props
       <div className="glass">
         <h1 className="text-6xl">{title}</h1>
         <h2 className="m-auto md:ml-0 mt-4 text-xl">{description}</h2>
-        <Link href="/in-home-aged-care" passHref>
+        <Link href="/in-home-care" passHref>
           <Button className="mt-12 uppercase" size="lg">{action}</Button>
         </Link>
       </div>
