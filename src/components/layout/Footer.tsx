@@ -14,7 +14,6 @@ export const Footer = () =>
       </div>
       <div className="grid-in-[logo] self-center justify-self-center">
         <Image
-          className=""
           src="/images/best-choice-care-dark.png"
           alt="Best Choice Care logo"
           width={240}

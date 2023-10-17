@@ -15,7 +15,7 @@ export const TheBest = () =>
       <p className="mt-4">
         Together, we&apos;ve created a harmonious blend of expertise, compassion, and dedication, guaranteeing stability and the highest quality of care for each individual. Choose us, and witness firsthand the unparalleled commitment to making your support and care at home a comforting and empowering journey.
       </p>
-      <h4 className="mt-8 font-bold text-xl uppercase">Speak to our Care Coordinator</h4>
+      <div className="mt-8 font-bold text-xl uppercase">Speak to our Care Coordinator</div>
       <Link href="tel:1300 711 380" passHref>
         <Button className="mt-8 font-bold text-base" size="lg">
           <svg className="w-8 h-8 fill-white pr-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">

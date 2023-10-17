@@ -20,7 +20,7 @@ export const Testimonials = ({ testimonials }: Props) => {
             {message.map((text, index) =>
               <p key={index} className="text-xl italic pb-4">{text}</p>
             )}
-            <h4 className="font-bold">{name}</h4>
+            <div className="font-bold">{name}</div>
             <p>{location}</p>
           </CardContent>
         </Card>

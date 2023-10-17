@@ -14,7 +14,7 @@ export const IconCard = ({ icon, title, description, link }: Props) =>
   <Card>
     <CardHeader className="items-center">
       <Image className="h-[41px]" width={53} height={41} src={`/icons/${icon}.svg`} alt="icon" />
-      <h4 className="text-secondary font-bold text-sm text-left">{title}</h4>
+      <div className="text-secondary font-bold text-sm text-left">{title}</div>
     </CardHeader>
     <CardContent className="text-center">
       <p>{description}</p>
