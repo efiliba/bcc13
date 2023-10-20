@@ -20,7 +20,7 @@ export const Footer = () =>
             loading="lazy"
           />
         </picture>
-        <div className="text-black">version: {process.env.NEXT_PUBLIC_VERSION}</div>
+        <div className="text-black">version: 1.0.2</div>
       </div>
       <div className="grid-in-[contact] md:justify-self-end">
         <div className="text-primary font-bold">Contact Us</div>
