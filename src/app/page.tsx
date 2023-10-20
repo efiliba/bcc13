@@ -8,7 +8,7 @@ const Home = () =>
       image="/images/aged-care-at-home.jpg"
       srcSets={[
         { srcSet: "/images/aged-care-at-home.avif", type: "image/avif" },
-        { srcSet: "/images/aged-care-at-home.jpg", type: "image/png" }
+        { srcSet: "/images/aged-care-at-home.jpg", type: "image/jpg" }
       ]}
       title="Holistic Complex Care Support"
       description="Best Choice Care: Providing Healthcare in Australia. Live in your own home, on your own terms."

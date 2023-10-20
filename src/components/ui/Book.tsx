@@ -2,7 +2,8 @@ import { Container, SplitImageContent } from '@/components';
 
 interface Props {
   pages: {
-    image: string;
+    imageName: string;
+    imageType: string;
     heading: string;
     text: string[];
     list?: string[];
@@ -11,11 +12,15 @@ interface Props {
 
 export const Book = ({ pages }: Props) =>
   <Container contentClassName="grid gap-y-20 md:gap-y-8">
-    {pages.map(({ image, heading, text, list }, index) =>
+    {pages.map(({ imageName, imageType, heading, text, list }, index) =>
       <SplitImageContent
         key={index}
         imageClassName="border-8 border-gray-100"
-        image={image}
+        image={`${imageName}.${imageType}`}
+        srcSets={[
+          { srcSet: `${imageName}.avif`, type: "image/avif" },
+          { srcSet: `${imageName}.${imageType}`, type: `image/${imageType}` }
+        ]}
         imageFirst={index % 2 !== 0}
       >
         <div className="pt-2">

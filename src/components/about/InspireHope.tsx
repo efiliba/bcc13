@@ -2,7 +2,13 @@ import { Container, SplitImageContent, PreTitleDescription } from '@/components'
 
 export const InspireHope = () =>
   <Container className="bg-gray-50">
-    <SplitImageContent image="inspire-hope.png">
+    <SplitImageContent
+      image="inspire-hope.png"
+      srcSets={[
+        { srcSet: "inspire-hope.avif", type: "image/avif" },
+        { srcSet: "inspire-hope.png", type: "image/png" }
+      ]}
+    >
       <PreTitleDescription
         title="To Inspire Hope and Well-Being With our High Quality In-home Care"
         descriptions={[

@@ -2,7 +2,14 @@ import { Container, SplitImageContent, PreTitleDescription } from '@/components'
 
 export const ServicesRange = () =>
   <Container>
-    <SplitImageContent image="our-services.jpg" imageFirst>
+    <SplitImageContent
+      image="our-services.jpg"
+      srcSets={[
+        { srcSet: "our-services.avif", type: "image/avif" },
+        { srcSet: "our-services.jpg", type: "image/jpg" }
+      ]}
+      imageFirst
+    >
       <PreTitleDescription
         preTitle="Our Services"
         title="Our Comprehensive Range Of Services Cater To Every Need"

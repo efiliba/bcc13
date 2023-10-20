@@ -2,7 +2,14 @@ import { Container, SplitImageContent, PreTitleDescription } from '@/components'
 
 export const OurStory = () =>
   <Container>
-    <SplitImageContent image="our-story.jpg" imageFirst>
+    <SplitImageContent
+      image="our-story.jpg"
+      srcSets={[
+        { srcSet: "our-story.avif", type: "image/avif" },
+        { srcSet: "our-story.jpg", type: "image/jpg" }
+      ]}
+      imageFirst
+    >
       <PreTitleDescription
         preTitle="Our Story"
         title="Our Story Is One Filled With Ambition, Passion, And A Drive For Change"

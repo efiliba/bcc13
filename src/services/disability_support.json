@@ -1,6 +1,7 @@
 [
   {
-    "image": "support.jpg",
+    "imageName": "support",
+    "imageType": "jpg",
     "heading": "Supporting you",
     "text": [
       "We have a wide variety of disability support services available — either in your own home or in the community.",
@@ -16,7 +17,8 @@
     ]
   },
   {
-    "image": "goals.jpg",
+    "imageName": "goals",
+    "imageType": "jpg",
     "heading": "Reach your goals",
     "text": [
       "Our flexible services are tailored around your specific goals and circumstances and give you complete control over the support you choose to receive.",

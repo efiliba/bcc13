@@ -4,7 +4,14 @@ import { Container, SplitImageContent, Button } from '@/components';
 
 export const TheBest = () =>
   <Container>
-    <SplitImageContent image="best-care.jpg" imageFirst>
+    <SplitImageContent
+      image="best-care.jpg"
+      srcSets={[
+        { srcSet: "best-care.avif", type: "image/avif" },
+        { srcSet: "best-care.jpg", type: "image/jpg" }
+      ]}
+      imageFirst
+    >
       <h1 className="font-bold text-2xl md:text-4xl">Experience Holistic Support with Our High-Intensity NDIS Services</h1>
       <p className="mt-4">
         At Best Choice Care, we pride ourselves on delivering exceptional high-intensity NDIS services that redefine post-hospital care. By collaborating closely with our esteemed partner a Highly Experienced Nurse Practitioner & Clinical Director, we&apos;ve pioneered a seamless transition process for participants. Starting from hospital discharge, we meticulously orchestrate the transition into the comfort of the participant&apos;s home. But that&apos;s just the beginning.

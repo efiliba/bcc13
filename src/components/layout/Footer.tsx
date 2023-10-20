@@ -1,5 +1,3 @@
-import Image from 'next/image';
-
 import { Container, NavBar } from '@/components';
 
 export const Footer = () =>
@@ -13,12 +11,15 @@ export const Footer = () =>
         <NavBar className="text-text mt-4" />
       </div>
       <div className="grid-in-[logo] self-center justify-self-center">
-        <Image
-          src="/images/best-choice-care-dark.png"
-          alt="Best Choice Care logo"
-          width={240}
-          height={100}
-        />
+        <picture>
+          <img
+            src="/images/best-choice-care-dark.png"
+            alt="Best Choice Care Logo"
+            width={240}
+            height={100}
+            loading="lazy"
+          />
+        </picture>
         <div className="text-black">version: {process.env.NEXT_PUBLIC_VERSION}</div>
       </div>
       <div className="grid-in-[contact] md:justify-self-end">

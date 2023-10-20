@@ -1,5 +1,3 @@
-import Image from 'next/image';
-
 import { Card, CardHeader, CardContent } from '@/components';
 
 export interface TileProps {
@@ -17,7 +15,16 @@ interface Props {
 const Tile = ({ tile: { header: { icon, text }, description } }: { tile: TileProps }) =>
   <Card>
     <CardHeader className="grid grid-cols-[53px_1fr] gap-x-4 items-center">
-      <Image className="h-[41px]" width={53} height={41} src={`/icons/${icon}.svg`} alt="icon" />
+      <picture>
+        <img
+          className="h-[41px]" 
+          src={`/icons/${icon}.svg`}
+          alt="icon"
+          width={53}
+          height={41}
+          loading="lazy"
+        />
+      </picture>
       <div className="font-bold text-xl text-left">{text}</div>
     </CardHeader>
     <CardContent className="text-left">
