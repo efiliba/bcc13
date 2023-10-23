@@ -1,22 +1,32 @@
 "use client";
 
-import { Paralax, Book, Location } from '@/components';
+import { useState } from 'react';
 
 import { agedCare } from '@/services';
+import { Paralax, Book, Location, HomeCareRequestForm } from '@/components';
 
-const handleClick = () => window.open("https://www.cognitoforms.com/BestChoiceCare1/HomeCareRequestReferralForm");
+const AgedCare = () => {
+  const [showRequestForm, setShowRequestForm] = useState(false);
 
-const AgedCare = () =>
-  <>
-    <Paralax
-      className="bg-aged-care"
-      title="IN-HOME CARE"
-      description="If you are looking for in-home care services please complete the form below."
-      action="SERVICE REQUEST FORM"
-      onClick={handleClick}
-    />
-    <Book pages={agedCare} />
-    <Location />
-  </>;
+  const handleShowRequest = () => setShowRequestForm(true);
+
+  const handleCloseRequestForm = () => setShowRequestForm(false);
+
+  return (
+    <>
+      <Paralax
+        className="bg-aged-care"
+        title="IN-HOME CARE"
+        description="If you are looking for in-home care services please complete the form below."
+        action="SERVICE REQUEST FORM"
+        onClick={handleShowRequest}
+      />
+      <Book pages={agedCare} />
+      <Location />
+      <HomeCareRequestForm show={showRequestForm} onHide={handleCloseRequestForm} />
+
+    </>
+  );
+};
 
 export default AgedCare;
