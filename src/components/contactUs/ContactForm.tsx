@@ -23,47 +23,47 @@ const funding = ['', 'NDIS', 'Private', 'Other'] as const;
 const fields = [{
   name: 'name' as const,
   placeholder: 'Contact name',
-  lable: 'Name',
+  label: 'Name',
   description: 'Please enter your name',
   options: undefined // Needed for TS - as options no longer used
 }, {
   name: 'phone' as const,
   placeholder: 'Enter your contact number',
-  lable: 'Contact number',
+  label: 'Contact number',
   description: 'Phone number of primary contact'
 }, {
 //   name: 'bestTime' as const,
 //   placeholder: 'Select the best time for us to contact you',
-//   lable: 'Best time to be reached',
+//   label: 'Best time to be reached',
 //   control: 'option' as const,
 //   options: bestTime
 // }, {
 //   name: 'hearAboutUs' as const,
 //   placeholder: 'Please let us know how you heard about us',
-//   lable: 'How did you hear about us?',
+//   label: 'How did you hear about us?',
 //   control: 'option' as const,
 //   options: hearAboutUs
 // }, {
   name: 'email' as const,
   placeholder: 'Please enter a contact email address',
-  lable: 'Email address',
+  label: 'Email address',
   description: 'Email address of primary contact'
 }, {
   name: 'postcode' as const,
   placeholder: 'Please enter a postcode',
-  lable: 'Postcode',
+  label: 'Postcode',
   description: 'Postcode where care is needed'
 // }, {
 //   name: 'funding' as const,
 //   placeholder: 'Please select the funding type',
-//   lable: 'Funding',
+//   label: 'Funding',
 //   description: 'NDIS or private funding',
 //   control: 'option' as const,
 //   options: funding
 }, {
   name: 'question' as const,
   placeholder: 'Feel free to ask any questions or concerns you may have.',
-  lable: 'How can we help you with your care?',
+  label: 'How can we help you with your care?',
   control: 'textarea' as const
 }];
 
@@ -176,14 +176,14 @@ export const ContactForm = () => {
         <h2 className="font-bold text-xl md:text-3xl pb-4 text-center">Get Started with a Free Caring Consult</h2>
         <Form {...form}>
           <form onSubmit={form.handleSubmit(onSubmit)} className="grid gap-y-4 space-y-4">
-            {fields.map(({ name, placeholder, lable, description, control, options }, index) =>
+            {fields.map(({ name, placeholder, label, description, control, options }, index) =>
               <FormField
                 key={index}
                 control={form.control}
                 name={name}
                 render={({ field }) =>
                   <FormItem>
-                    <FormLabel>{lable}</FormLabel>
+                    <FormLabel>{label}</FormLabel>
                     <FormControl>
                       <ControlOptions
                         control={control}

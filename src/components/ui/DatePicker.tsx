@@ -37,31 +37,33 @@ export const DatePicker = ({ fastYearChange = false, value, onChange }: Props) =
   };
 
   return (
-    <Popover>
-      {fastYearChange &&
-        <>
-          <div>Year:</div>
-          <Input type="number" min={1900} max={2030} value={yearInput} onChange={handleSetYear} />
-        </>
-      }
-      <PopoverTrigger asChild>
-        <Button
-          variant="outline"
-          className={cn("w-[280px] justify-start text-left font-normal", !date && "text-muted-foreground")}
-        >
-          {date ? format(date, "PPP") : <span>Pick a date</span>}
-          <CalendarIcon className="mr-2 h-4 w-4" />
-        </Button>
-      </PopoverTrigger>
-      <PopoverContent className="w-auto p-0">
-        <Calendar
-          mode="single"
-          initialFocus
-          defaultMonth={date}
-          selected={date}
-          onSelect={handleDateChange}
-        />
-      </PopoverContent>
-    </Popover>
+    <div className={cn('grid items-center gap-x-2', fastYearChange ? 'grid-cols-[min-content_max-content_1fr]': 'grid-flow-col' )}>
+      <Popover>
+        {fastYearChange &&
+          <>
+            <div>Year:</div>
+            <Input className="bg-white" type="number" min={1900} max={2030} value={yearInput} onChange={handleSetYear} />
+          </>
+        }
+        <PopoverTrigger asChild>
+          <Button
+            variant="outline"
+            className={cn("justify-start text-left font-normal bg-white", !date && "text-muted-foreground")}
+          >
+            {date ? format(date, "PPP") : <span>Pick a date</span>}
+            <CalendarIcon className="mr-2 h-4 w-4" />
+          </Button>
+        </PopoverTrigger>
+        <PopoverContent className="w-auto p-0">
+          <Calendar
+            mode="single"
+            initialFocus
+            defaultMonth={date}
+            selected={date}
+            onSelect={handleDateChange}
+          />
+        </PopoverContent>
+      </Popover>
+    </div>
   )
 };

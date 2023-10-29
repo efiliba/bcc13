@@ -1,114 +1,156 @@
 "use client";
 
-import { useState } from 'react';
+import { useState, Fragment } from 'react';
 import { zodResolver } from '@hookform/resolvers/zod';
 import * as z from 'zod';
 import { useForm } from 'react-hook-form';
 import emailjs from '@emailjs/browser';
 
-import { SplitImageContent } from '@/components/ui/SplitImageContent';
-import { Container } from '@/components/ui/Container';
 import { Button } from '@/components/ui/Button';
 import { Input } from '@/components/ui/Input';
+import { Label } from '@/components/ui/Label';
 import { Textarea } from '@/components/ui/Textarea';
 import { Form, FormControl, FormDescription, FormField, FormItem, FormLabel, FormMessage } from '@/components/ui/Form';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/Select";
-import {
-  Dialog,
-  DialogContent,
-  DialogDescription,
-  DialogHeader,
-  DialogTitle,
-  DialogFooter,
-  DialogClose
-} from "@/components/ui/Dialog";
+import { RadioGroup, RadioGroupItem } from "@/components/ui/RadioGroup";
+import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/Dialog";
 import { DatePicker } from "@/components/ui/DatePicker";
 import { RequestSent } from './RequestSent';
 import { RequestError } from './RequestError';
 
 const gender = ['', 'Male', 'Female', 'other'] as const;
 
+const referral = ['', 'Yes', 'No'] as const;
+
 const fields = [{
   name: 'requestDate' as const,
   placeholder: 'Contact name',
-  lable: 'Date of Request',
+  label: 'Date of Request',
   control: 'date' as const,
-  description: 'temp',
   options: undefined,
+  className: 'col-span-full'
 }, {
-  name: 'clientDetailsLable' as const,
-  lable: 'Client Details',
-  control: 'lable' as const
+  name: 'clientDetailsLabel' as const,
+  label: 'Client Details',
+  control: 'label' as const,
+  className: 'col-span-full pt-6',
+  labelClassName: 'font-bold text-xl'
 }, {
   name: 'name' as const,
   placeholder: 'First',
-  lable: 'Name'
+  label: 'Name',
+  className: 'col-span-2'
 }, {
   name: 'surname' as const,
-  placeholder: 'Last'
+  placeholder: 'Last',
+  labelClassName: 'block h-6',
+  className: 'col-span-2'
 }, {
   name: 'gender' as const,
   placeholder: 'Gender',
-  lable: 'Gender',
+  label: 'Gender',
   control: 'option' as const,
-  options: gender
+  options: gender,
+  className: 'col-span-2'
 }, {
-  name: 'dateOfBirth' as const,
-  lable: 'Date of Birth',
-  control: 'date' as const,
-  fastYearChange: true
-}, {
-  name: 'phone' as const,
-  placeholder: 'Enter your contact number',
-  lable: 'Contact number',
-  description: 'Phone number of primary contact'
-}, {
-  name: 'email' as const,
-  placeholder: 'Please enter a contact email address',
-  lable: 'Email address',
-  description: 'Email address of primary contact'
+  name: 'location' as const,
+  placeholder: 'City',
+  label: 'Location',
+  className: 'col-span-3'
 }, {
   name: 'postcode' as const,
   placeholder: 'Please enter a postcode',
-  lable: 'Postcode',
-  description: 'Postcode where care is needed'
+  label: 'Postcode',
+  description: 'Postcode where care is needed',
+  className: 'col-span-3'
+}, {
+  name: 'dateOfBirth' as const,
+  label: 'Date of Birth',
+  control: 'date' as const,
+  fastYearChange: true,
+  className: 'col-span-full'
+}, {
+  name: 'phone' as const,
+  placeholder: 'Enter your contact number',
+  label: 'Contact number',
+  description: 'Phone number of primary contact',
+  className: 'col-span-3'
+}, {
+  name: 'email' as const,
+  placeholder: 'Enter a contact email address',
+  label: 'Email address',
+  description: 'Email address of primary contact',
+  className: 'col-span-3'
+}, {
+  name: 'referralLabel' as const,
+  label: 'Referral',
+  control: 'label' as const,
+  className: 'col-span-full pt-6',
+  labelClassName: 'font-bold text-xl'
 }, {
   name: 'question' as const,
-  placeholder: 'Feel free to ask any questions or concerns you may have.',
-  lable: 'Services required',
-  control: 'textarea' as const
+  placeholder: 'e.g. Need assistance with cleaning, home care, drive to appointments',
+  label: 'Services required',
+  control: 'textarea' as const,
+  className: 'col-span-full'
+}, {
+  name: 'servicesLabel' as const,
+  label: 'Services',
+  control: 'label' as const,
+  className: 'col-span-full pt-6',
+  labelClassName: 'font-bold text-xl'
+}, {
+  name: 'referral' as const,
+  label: 'Is this a referral?',
+  control: 'radio' as const,
+  options: referral,
+  className: 'col-span-full justify-self-start'
 }];
 
 const formSchema = z.object({
   requestDate: z.date(),
-  clientDetailsLable: z.string(),
+  clientDetailsLabel: z.string().optional(),
   name: z.string()
-  .trim()
-  .min(1, { message: 'Name is required' }),
-  surname: z.string(),
+    .trim()
+    .min(1, { message: 'Name is required' }),
+  surname: z.string()
+    .trim()
+    .min(1, { message: 'Surname is required' }),
   gender: z.enum(gender),
+  location: z.string(),
+  postcode: z.string()
+    .min(4, 'Please enter a valid postcode')
+    .max(4, 'Please enter a valid postcode'),
   dateOfBirth: z.date(),
   phone: z.string(),
   email: z.string()
     .min(1, { message: 'Email address is required' })
     .email('Please enter a valid email address'),
-  postcode: z.string()
-    .min(4, 'Please enter a valid postcode')
-    .max(4, 'Please enter a valid postcode'),
-  question: z.string()
+  servicesLabel: z.string().optional(),
+  question: z.string(),
+  referralLabel: z.string().optional(),
+  referral: z.enum(referral)
 });
 
 interface ControlOptionProps {
-  control?: 'option' | 'textarea' | 'date' | 'lable';
-  options?: typeof gender;
+  control?: 'option' | 'textarea' | 'date' | 'label' | 'radio';
+  options?: typeof gender | typeof referral;
   fastYearChange?: boolean;
-  value: string | Date;
+  value?: string | Date;
   placeholder?: string;
   name: string;
   onChange: (...event: any[]) => void;
 }
 
-const ControlOptions = ({ control, options, fastYearChange, value, placeholder, name, onChange }: ControlOptionProps) => {
+const ControlOptions = ({
+  control,
+  options,
+  fastYearChange,
+  value,
+  placeholder,
+  name,
+  onChange
+}: ControlOptionProps) => {
   switch (control) {
     case 'option': return (
       <Select value={value as string} onValueChange={onChange}>
@@ -130,11 +172,21 @@ const ControlOptions = ({ control, options, fastYearChange, value, placeholder, 
         onChange={onChange}
       />
     );
-    case 'lable': return (
+    case 'label': return (
       <div>{value as string}</div>
     );
     case 'date': return (
       <DatePicker fastYearChange={fastYearChange} value={value as Date} onChange={onChange} />
+    );
+    case 'radio': return (
+      <RadioGroup className="grid grid-flow-col justify-items-start"  value={value as string} onValueChange={onChange}>
+        {options?.slice(1).map((option, key) =>
+          <Fragment key={key}>
+            <RadioGroupItem value={option} id={`radio-${key}`} />
+            <Label htmlFor={`radio-${key}`}>{option}</Label>
+          </Fragment>
+        )}
+      </RadioGroup>
     );
     default: return (
       <Input className="bg-white" value={value as string} placeholder={placeholder} name={name} onChange={onChange} />
@@ -162,6 +214,7 @@ export const HomeCareRequestForm = ({ show, onHide }: Props) => {
       dateOfBirth: undefined,
       phone: '',
       email: '',
+      location: '',
       postcode: '',
       question: ''
     },
@@ -196,18 +249,28 @@ export const HomeCareRequestForm = ({ show, onHide }: Props) => {
       <Dialog open={show} onOpenChange={onHide}>
         <DialogContent className="overflow-y-auto max-h-screen bg-text">
           <DialogHeader>
-            <DialogTitle className="mb-2">Home Care Request / Referral Form</DialogTitle>
+            <DialogTitle className="font-bold text-2xl mb-2">Home Care Request / Referral Form</DialogTitle>
           </DialogHeader>
           <Form {...form}>
-            <form onSubmit={form.handleSubmit(onSubmit)} className="grid gap-y-4 space-y-4">
-              {fields.map(({ name, placeholder, lable, description, control, options, fastYearChange }, index) =>
+            <form onSubmit={form.handleSubmit(onSubmit)} className="grid grid-cols-6 gap-x-2">
+              {fields.map(({
+                name,
+                placeholder,
+                label,
+                description,
+                control,
+                options,
+                fastYearChange,
+                className,
+                labelClassName
+              }, index) =>
                 <FormField
                   key={index}
                   control={form.control}
                   name={name}
                   render={({ field }) =>
-                    <FormItem>
-                      <FormLabel>{lable}</FormLabel>
+                    <FormItem className={className}>
+                      <FormLabel className={labelClassName}>{label}</FormLabel>
                       <FormControl>
                         <ControlOptions
                           control={control}
@@ -225,11 +288,17 @@ export const HomeCareRequestForm = ({ show, onHide }: Props) => {
                   }
                 />
               )}
-              <p>
+              <p className="col-span-full pt-6">
                 By clicking on submit, you approve that the information you entered will be transmitted via email, and
                 understand that information provided should not be considered medical advice or treatment.
               </p>
-              <Button className="justify-self-end" disabled={sendRequest} variant="secondary" size="lg" type="submit">
+              <Button
+                className="col-span-full justify-self-end mt-4"
+                disabled={sendRequest}
+                variant="secondary"
+                size="lg"
+                type="submit"
+              >
                 {sendRequest &&
                   <svg className="animate-spin -ml-1 mr-3 h-5 w-5 text-text" fill="none" viewBox="0 0 24 24">
                     <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" />
@@ -240,25 +309,10 @@ export const HomeCareRequestForm = ({ show, onHide }: Props) => {
               </Button>
             </form>
           </Form>
-          <DialogFooter>
-            <DialogClose asChild>
-              <Button variant="secondary" onClick={onHide}>Confirm</Button>
-            </DialogClose>
-          </DialogFooter>
         </DialogContent>
       </Dialog>
       <RequestSent open={openRequestSent} onClose={handleCloseRequestSent} />
       <RequestError open={openRequestError} onClose={handleCloseRequestError} />
     </>
   );
-
-  // return (
-  //   show
-  //     ? <div>
-  //         <h2 className="font-bold text-xl md:text-3xl pb-4 text-center">Get Started with a Free Caring Consult</h2>
-
-
-  //       </div>
-  //     : null
-  // );
 };
