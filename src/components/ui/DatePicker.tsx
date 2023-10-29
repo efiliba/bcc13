@@ -48,7 +48,7 @@ export const DatePicker = ({ fastYearChange = false, value, onChange }: Props) =
         <PopoverTrigger asChild>
           <Button
             variant="outline"
-            className={cn("justify-start text-left font-normal bg-white", !date && "text-muted-foreground")}
+            className={cn("justify-start text-left font-normal bg-white grid grid-cols-[1fr_min-content]", !date && "text-muted-foreground")}
           >
             {date ? format(date, "PPP") : <span>Pick a date</span>}
             <CalendarIcon className="mr-2 h-4 w-4" />
