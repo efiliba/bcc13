@@ -9,12 +9,10 @@ import emailjs from '@emailjs/browser';
 import { SplitImageContent } from '@/components/ui/SplitImageContent';
 import { Container } from '@/components/ui/Container';
 import { Button } from '@/components/ui/Button';
-import { Input } from '@/components/ui/Input';
-import { Textarea } from '@/components/ui/Textarea';
 import { Form, FormControl, FormDescription, FormField, FormItem, FormLabel, FormMessage } from '@/components/ui/Form';
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/Select";
 import { RequestSent } from './RequestSent';
 import { RequestError } from './RequestError';
+import { FormControlOptions } from '@/components/ui/FormControlOptions';
 
 const bestTime = ['', 'Anytime', 'Morning', 'Afternoon', 'Evening'] as const;
 const hearAboutUs = ['', 'Google Search', 'Friend/Word of Mouth', 'Professional Referral (Doctor)', 'Social Media', 'TV', 'Radio', 'Hospital', 'Brochure', 'Facility', 'Other'] as const;
@@ -84,43 +82,6 @@ const formSchema = z.object({
   question: z.string()
 });
 
-interface ControlOptionProps {
-  control?: 'option' | 'textarea';
-  options?: typeof bestTime | typeof hearAboutUs | typeof funding;
-  value: string;
-  placeholder: string;
-  name: string;
-  onChange: (...event: any[]) => void;
-}
-
-const ControlOptions = ({ control, options, value, placeholder, name, onChange }: ControlOptionProps) => {
-  switch (control) {
-    case 'option': return (
-      <Select value={value} onValueChange={onChange}>
-        <SelectTrigger className="bg-white" aria-label={name}>
-          {value ? <SelectValue placeholder={placeholder} /> : placeholder}
-        </SelectTrigger>
-        <SelectContent>
-          {options?.slice(1).map((option, key) =>
-            <SelectItem key={key} value={option}>{option}</SelectItem>
-          )}
-        </SelectContent>
-      </Select>
-    );
-    case 'textarea': return (
-      <Textarea
-        className="bg-white min-h-[10rem]"
-        value={value}
-        placeholder={placeholder}
-        onChange={onChange}
-      />
-    );
-    default: return (
-      <Input className="bg-white" value={value} placeholder={placeholder} name={name} onChange={onChange} />
-    );
-  }
-};
-
 export const ContactForm = () => {
   const [sendRequest, setSendRequest] = useState(false);
   const [openRequestSent, setOpenRequestSent] = useState(false);
@@ -185,7 +146,7 @@ export const ContactForm = () => {
                   <FormItem>
                     <FormLabel>{label}</FormLabel>
                     <FormControl>
-                      <ControlOptions
+                      <FormControlOptions
                         control={control}
                         options={options}
                         value={field.value}

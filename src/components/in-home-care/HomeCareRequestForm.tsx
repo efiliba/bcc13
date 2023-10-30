@@ -11,8 +11,7 @@ import { Form, FormControl, FormDescription, FormField, FormItem, FormLabel, For
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/Dialog";
 import { RequestSent } from './RequestSent';
 import { RequestError } from './RequestError';
-
-import { FormControlOptions } from '@/components';
+import { FormControlOptions } from '@/components/ui/FormControlOptions';
 
 const gender = ['', 'Male', 'Female', 'other'] as const;
 
@@ -179,9 +178,9 @@ export const HomeCareRequestForm = ({ show, onHide }: Props) => {
   const handleCloseRequestError = () => setOpenRequestError(false);
 
   return (
-    <div className="bg-yellow-500" >
+    <>
       <Dialog open={show} onOpenChange={onHide}>
-        <DialogContent className="bg-primary border-black overflow-y-auto h-[90%]">
+        <DialogContent className="bg-primary border-black overflow-y-auto max-w-[90%] sm:max-w-lg max-h-[90%]">
           <DialogHeader>
             <DialogTitle className="font-bold text-2xl mb-2">Home Care Request / Referral Form</DialogTitle>
           </DialogHeader>
@@ -206,7 +205,7 @@ export const HomeCareRequestForm = ({ show, onHide }: Props) => {
                     <FormItem className={className}>
                       <FormLabel className={labelClassName}>{label}</FormLabel>
                       <FormControl>
-                        <FormControlOptions<typeof gender | typeof referral>
+                        <FormControlOptions
                           control={control}
                           options={options}
                           fastYearChange={fastYearChange}
@@ -247,6 +246,6 @@ export const HomeCareRequestForm = ({ show, onHide }: Props) => {
       </Dialog>
       <RequestSent open={openRequestSent} onClose={handleCloseRequestSent} />
       <RequestError open={openRequestError} onClose={handleCloseRequestError} />
-    </div>
+    </>
   );
 };
