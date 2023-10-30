@@ -1,22 +1,18 @@
 "use client";
 
-import { useState, Fragment } from 'react';
+import { useState } from 'react';
 import { zodResolver } from '@hookform/resolvers/zod';
 import * as z from 'zod';
 import { useForm } from 'react-hook-form';
 import emailjs from '@emailjs/browser';
 
 import { Button } from '@/components/ui/Button';
-import { Input } from '@/components/ui/Input';
-import { Label } from '@/components/ui/Label';
-import { Textarea } from '@/components/ui/Textarea';
 import { Form, FormControl, FormDescription, FormField, FormItem, FormLabel, FormMessage } from '@/components/ui/Form';
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/Select";
-import { RadioGroup, RadioGroupItem } from "@/components/ui/RadioGroup";
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/Dialog";
-import { DatePicker } from "@/components/ui/DatePicker";
 import { RequestSent } from './RequestSent';
 import { RequestError } from './RequestError';
+
+import { FormControlOptions } from '@/components';
 
 const gender = ['', 'Male', 'Female', 'other'] as const;
 
@@ -132,68 +128,6 @@ const formSchema = z.object({
   referral: z.enum(referral)
 });
 
-interface ControlOptionProps {
-  control?: 'option' | 'textarea' | 'date' | 'label' | 'radio';
-  options?: typeof gender | typeof referral;
-  fastYearChange?: boolean;
-  value?: string | Date;
-  placeholder?: string;
-  name: string;
-  onChange: (...event: any[]) => void;
-}
-
-const ControlOptions = ({
-  control,
-  options,
-  fastYearChange,
-  value,
-  placeholder,
-  name,
-  onChange
-}: ControlOptionProps) => {
-  switch (control) {
-    case 'option': return (
-      <Select value={value as string} onValueChange={onChange}>
-        <SelectTrigger className="bg-white" aria-label={name}>
-          {value ? <SelectValue placeholder={placeholder} /> : placeholder}
-        </SelectTrigger>
-        <SelectContent>
-          {options?.slice(1).map((option, key) =>
-            <SelectItem key={key} value={option}>{option}</SelectItem>
-          )}
-        </SelectContent>
-      </Select>
-    );
-    case 'textarea': return (
-      <Textarea
-        className="bg-white min-h-[10rem]"
-        value={value as string}
-        placeholder={placeholder}
-        onChange={onChange}
-      />
-    );
-    case 'label': return (
-      <div>{value as string}</div>
-    );
-    case 'date': return (
-      <DatePicker fastYearChange={fastYearChange} value={value as Date} onChange={onChange} />
-    );
-    case 'radio': return (
-      <RadioGroup className="grid grid-flow-col justify-items-start"  value={value as string} onValueChange={onChange}>
-        {options?.slice(1).map((option, key) =>
-          <Fragment key={key}>
-            <RadioGroupItem value={option} id={`radio-${key}`} />
-            <Label htmlFor={`radio-${key}`}>{option}</Label>
-          </Fragment>
-        )}
-      </RadioGroup>
-    );
-    default: return (
-      <Input className="bg-white" value={value as string} placeholder={placeholder} name={name} onChange={onChange} />
-    );
-  }
-};
-
 interface Props {
   show: boolean;
   onHide(): void;
@@ -245,9 +179,9 @@ export const HomeCareRequestForm = ({ show, onHide }: Props) => {
   const handleCloseRequestError = () => setOpenRequestError(false);
 
   return (
-    <>
+    <div className="bg-yellow-500" >
       <Dialog open={show} onOpenChange={onHide}>
-        <DialogContent className="overflow-y-auto max-h-screen bg-text">
+        <DialogContent className="bg-primary border-black overflow-y-auto h-[90%]">
           <DialogHeader>
             <DialogTitle className="font-bold text-2xl mb-2">Home Care Request / Referral Form</DialogTitle>
           </DialogHeader>
@@ -272,7 +206,7 @@ export const HomeCareRequestForm = ({ show, onHide }: Props) => {
                     <FormItem className={className}>
                       <FormLabel className={labelClassName}>{label}</FormLabel>
                       <FormControl>
-                        <ControlOptions
+                        <FormControlOptions<typeof gender | typeof referral>
                           control={control}
                           options={options}
                           fastYearChange={fastYearChange}
@@ -313,6 +247,6 @@ export const HomeCareRequestForm = ({ show, onHide }: Props) => {
       </Dialog>
       <RequestSent open={openRequestSent} onClose={handleCloseRequestSent} />
       <RequestError open={openRequestError} onClose={handleCloseRequestError} />
-    </>
+    </div>
   );
 };
