@@ -6,12 +6,8 @@ import * as z from 'zod';
 import { useForm } from 'react-hook-form';
 import emailjs from '@emailjs/browser';
 
-import { Button } from '@/components/ui/Button';
-import { Form, FormControl, FormDescription, FormField, FormItem, FormLabel, FormMessage } from '@/components/ui/Form';
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/Dialog";
-import { RequestSent } from './RequestSent';
-import { RequestError } from './RequestError';
-import { FormControlOptions } from '@/components/ui/FormControlOptions';
+import { DynamicFormFromFields, RequestSent, RequestError } from '@/components/ui/form';
 
 const gender = ['', 'Male', 'Female', 'other'] as const;
 
@@ -108,7 +104,6 @@ const fields = [{
 
 const formSchema = z.object({
   // requestDate: z.date(),
-  clientDetailsLabel: z.string().optional(),
   name: z.string()
     .trim()
     .min(1, { message: 'Name is required' }),
@@ -126,9 +121,7 @@ const formSchema = z.object({
   email: z.string()
     .min(1, { message: 'Email address is required' })
     .email('Please enter a valid email address'),
-  servicesLabel: z.string().optional(),
   question: z.string().optional(),
-  // referralLabel: z.string().optional(),
   // referral: z.enum(referral)
 });
 
@@ -138,7 +131,7 @@ interface Props {
 }
 
 export const HomeCareRequestForm = ({ show, onHide }: Props) => {
-  const [sendRequest, setSendRequest] = useState(false);
+  const [submitRequest, setSubmitRequest] = useState(false);
   const [openRequestSent, setOpenRequestSent] = useState(false);
   const [openRequestError, setOpenRequestError] = useState(false);
 
@@ -150,18 +143,18 @@ export const HomeCareRequestForm = ({ show, onHide }: Props) => {
       surname: '',
       gender: '',
       // dateOfBirth: undefined,
+      location: '',
+      postcode: '',
       age: '',
       phone: '',
       email: '',
-      location: '',
-      postcode: '',
       question: ''
     },
   });
 
   const onSubmit = async (values: z.infer<typeof formSchema>) => {
     try {
-      setSendRequest(true);
+      setSubmitRequest(true);
       await emailjs.send(
         process.env.NEXT_PUBLIC_EMAIL_SERVICE_ID || '',
         process.env.NEXT_PUBLIC_EMAIL_REFERRAL_TEMPLATE_ID || '',
@@ -174,7 +167,7 @@ export const HomeCareRequestForm = ({ show, onHide }: Props) => {
     } catch {
       setOpenRequestError(true);
     } finally {
-      setSendRequest(false);
+      setSubmitRequest(false);
     }
   };
 
@@ -189,62 +182,19 @@ export const HomeCareRequestForm = ({ show, onHide }: Props) => {
           <DialogHeader>
             <DialogTitle className="font-bold text-2xl mb-2">Home Care Request / Referral Form</DialogTitle>
           </DialogHeader>
-          <Form {...form}>
-            <form onSubmit={form.handleSubmit(onSubmit)} className="grid grid-cols-6 gap-x-2">
-              {fields.map(({
-                name,
-                placeholder,
-                label,
-                description,
-                control,
-                options,
-                className,
-                labelClassName
-              }, index) =>
-                <FormField
-                  key={index}
-                  control={form.control}
-                  name={name}
-                  render={({ field }) =>
-                    <FormItem className={className}>
-                      <FormLabel className={labelClassName}>{label}</FormLabel>
-                      <FormControl>
-                        <FormControlOptions
-                          control={control}
-                          options={options}
-                          value={field.value}
-                          placeholder={placeholder}
-                          name={name}
-                          onChange={field.onChange}
-                        />
-                      </FormControl>
-                      <FormDescription className="text-secondary">{description}</FormDescription>
-                      <FormMessage />
-                    </FormItem>
-                  }
-                />
-              )}
+          <DynamicFormFromFields
+            className="grid grid-cols-6 gap-x-2"
+            form={form}
+            fields={fields}
+            submitting={submitRequest}
+            terms={
               <p className="col-span-full pt-6">
                 By clicking on submit, you approve that the information you entered will be transmitted via email, and
                 understand that information provided should not be considered medical advice or treatment.
               </p>
-              <Button
-                className="col-span-full justify-self-end mt-4"
-                disabled={sendRequest}
-                variant="secondary"
-                size="lg"
-                type="submit"
-              >
-                {sendRequest &&
-                  <svg className="animate-spin -ml-1 mr-3 h-5 w-5 text-text" fill="none" viewBox="0 0 24 24">
-                    <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" />
-                    <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z" />
-                  </svg>
-                }
-                Submit
-              </Button>
-            </form>
-          </Form>
+            }
+            onSubmit={onSubmit}
+          />
         </DialogContent>
       </Dialog>
       <RequestSent open={openRequestSent} onClose={handleCloseRequestSent} />

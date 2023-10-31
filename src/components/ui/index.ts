@@ -6,8 +6,6 @@ export * from './Card';
 export * from './Calendar';
 export * from './DatePicker';
 export * from './Dialog';
-export * from './Form';
-export * from './FormControlOptions';
 // export * from './Carousel';
 export * from './GoogleMaps';
 export * from './IconCard';
