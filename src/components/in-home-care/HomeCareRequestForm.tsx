@@ -18,17 +18,17 @@ const gender = ['', 'Male', 'Female', 'other'] as const;
 const referral = ['', 'Yes', 'No'] as const;
 
 const fields = [{
-  name: 'requestDate' as const,
-  placeholder: 'Contact name',
-  label: 'Date of Request',
-  control: 'date' as const,
-  options: undefined,
-  className: 'col-span-full'
-}, {
+//   name: 'requestDate' as const,
+//   placeholder: 'Contact name',
+//   label: 'Date of Request',
+//   control: 'date' as const,
+//   options: undefined,
+//   className: 'col-span-full'
+// }, {
   name: 'clientDetailsLabel' as const,
   label: 'Client Details',
   control: 'label' as const,
-  className: 'col-span-full pt-6',
+  className: 'col-span-full',
   labelClassName: 'font-bold text-xl'
 }, {
   name: 'name' as const,
@@ -59,12 +59,16 @@ const fields = [{
   description: 'Postcode where care is needed',
   className: 'col-span-3'
 }, {
-  name: 'dateOfBirth' as const,
-  label: 'Date of Birth',
-  control: 'date' as const,
-  fastYearChange: true,
+  name: 'age' as const,
+  label: 'Age',
   className: 'col-span-full'
 }, {
+//   name: 'dateOfBirth' as const,
+//   label: 'Date of Birth',
+//   control: 'date' as const,
+//   fastYearChange: true,
+//   className: 'col-span-full'
+// }, {
   name: 'phone' as const,
   placeholder: 'Enter your contact number',
   label: 'Contact number',
@@ -77,8 +81,8 @@ const fields = [{
   description: 'Email address of primary contact',
   className: 'col-span-3'
 }, {
-  name: 'referralLabel' as const,
-  label: 'Referral',
+  name: 'servicesLabel' as const,
+  label: 'Services',
   control: 'label' as const,
   className: 'col-span-full pt-6',
   labelClassName: 'font-bold text-xl'
@@ -88,43 +92,44 @@ const fields = [{
   label: 'Services required',
   control: 'textarea' as const,
   className: 'col-span-full'
-}, {
-  name: 'servicesLabel' as const,
-  label: 'Services',
-  control: 'label' as const,
-  className: 'col-span-full pt-6',
-  labelClassName: 'font-bold text-xl'
-}, {
-  name: 'referral' as const,
-  label: 'Is this a referral?',
-  control: 'radio' as const,
-  options: referral,
-  className: 'col-span-full justify-self-start'
+// }, {
+//   name: 'referralLabel' as const,
+//   label: 'Referral',
+//   control: 'label' as const,
+//   className: 'col-span-full pt-6',
+//   labelClassName: 'font-bold text-xl'
+// }, {
+//   name: 'referral' as const,
+//   label: 'Is this a referral?',
+//   control: 'radio' as const,
+//   options: referral,
+//   className: 'col-span-full justify-self-start'
 }];
 
 const formSchema = z.object({
-  requestDate: z.date(),
+  // requestDate: z.date(),
   clientDetailsLabel: z.string().optional(),
   name: z.string()
     .trim()
     .min(1, { message: 'Name is required' }),
   surname: z.string()
     .trim()
-    .min(1, { message: 'Surname is required' }),
-  gender: z.enum(gender),
-  location: z.string(),
+    .optional(),
+  gender: z.enum(gender).optional(),
+  location: z.string().optional(),
   postcode: z.string()
-    .min(4, 'Please enter a valid postcode')
-    .max(4, 'Please enter a valid postcode'),
-  dateOfBirth: z.date(),
+    .max(4, 'Please enter a valid postcode')
+    .optional(),
+  // dateOfBirth: z.date(),
+  age: z.string().optional(),
   phone: z.string(),
   email: z.string()
     .min(1, { message: 'Email address is required' })
     .email('Please enter a valid email address'),
   servicesLabel: z.string().optional(),
-  question: z.string(),
-  referralLabel: z.string().optional(),
-  referral: z.enum(referral)
+  question: z.string().optional(),
+  // referralLabel: z.string().optional(),
+  // referral: z.enum(referral)
 });
 
 interface Props {
@@ -140,11 +145,12 @@ export const HomeCareRequestForm = ({ show, onHide }: Props) => {
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
-      requestDate: undefined,
+      // requestDate: undefined,
       name: '',
       surname: '',
       gender: '',
-      dateOfBirth: undefined,
+      // dateOfBirth: undefined,
+      age: '',
       phone: '',
       email: '',
       location: '',
@@ -154,23 +160,22 @@ export const HomeCareRequestForm = ({ show, onHide }: Props) => {
   });
 
   const onSubmit = async (values: z.infer<typeof formSchema>) => {
-    console.log(values);
-    
-    // try {
-    //   setSendRequest(true);
-    //   await emailjs.send(
-    //     process.env.NEXT_PUBLIC_EMAIL_SERVICE_ID || '',
-    //     process.env.NEXT_PUBLIC_EMAIL_TEMPLATE_ID || '',
-    //     values,
-    //     process.env.NEXT_PUBLIC_EMAIL_PUBLIC_KEY
-    //   );
-    //   form.reset();
-    //   setOpenRequestSent(true);
-    // } catch {
-    //   setOpenRequestError(true);
-    // } finally {
-    //   setSendRequest(false);
-    // }
+    try {
+      setSendRequest(true);
+      await emailjs.send(
+        process.env.NEXT_PUBLIC_EMAIL_SERVICE_ID || '',
+        process.env.NEXT_PUBLIC_EMAIL_REFERRAL_TEMPLATE_ID || '',
+        values,
+        process.env.NEXT_PUBLIC_EMAIL_PUBLIC_KEY
+      );
+      form.reset();
+      onHide();
+      setOpenRequestSent(true);
+    } catch {
+      setOpenRequestError(true);
+    } finally {
+      setSendRequest(false);
+    }
   };
 
   const handleCloseRequestSent = () => setOpenRequestSent(false);
@@ -193,7 +198,6 @@ export const HomeCareRequestForm = ({ show, onHide }: Props) => {
                 description,
                 control,
                 options,
-                fastYearChange,
                 className,
                 labelClassName
               }, index) =>
@@ -208,7 +212,6 @@ export const HomeCareRequestForm = ({ show, onHide }: Props) => {
                         <FormControlOptions
                           control={control}
                           options={options}
-                          fastYearChange={fastYearChange}
                           value={field.value}
                           placeholder={placeholder}
                           name={name}
